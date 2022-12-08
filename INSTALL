@@ -1,0 +1,9 @@
+Copy WipeFreeSpaceGUI2/dist/WipeFreeSpaceGUI2.jar and run.sh to one directory
+ in  a suitable location (like in your PATH). Running "run.sh" will be enough.
+ The "java" binary must be in your $PATH variable.
+
+Under Windows, a duble click on the JAR file should be enough. If not, copy
+ WipeFreeSpaceGUI2/dist/WipeFreeSpaceGUI2.jar and run.bat to one directory in
+ a suitable location (like in your PATH). Running "run.bat" will be enough.
+ When using the second approach, the "java.exe" binary must be in your PATH
+ variable too.

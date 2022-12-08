@@ -1,0 +1,44 @@
+2022-02-08	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* WipeFreeSpaceGUI2 version 1.0.
+	  A complete re-write of the previous GUI application, without any
+	  frameworks, with many, many refactorings, simplifications and other
+	  changes. Basic functionality included: adding and removing
+	  filesystems, selecting WipeFreeSpace options (supports the options
+	  from version 2.5), displaying output and progress, an "About" box,
+	  logging exceptions to a file, configuration file support,
+	  command-line support. New icons. New Makefile and build system
+	  (Apache NetBeans 12.6). Updated the URLs and documentation.
+	  Major changes since the old GUI:
+	* CommandLineParser.java: A new class for parsing the command line.
+	  Supporting command-line arguments of WipeFreeSpace 2.5.
+	* ConfigFile.java: Added support for command-line arguments of
+	  WipeFreeSpace 2.5. Using List instead of Vector. Renamed the fields
+	  according to NetBeans' recommendations. Moved Matchers to read().
+	* ConfigFile.java (write): Let the PrintWriter handle the line endings.
+	* Starter.java: Added creating a log file, redirecting exception logs.
+	* Utils.java: Ported from JYMAG (https://jymag.sourceforge.io/). Useful
+	  constants and utility methods.
+	* UiUtils.java: Ported from JYMAG (https://jymag.sourceforge.io/).
+	  Useful constants and utility methods related to the user interface.
+	* WfsMainWindow.java: Rewritten from WipeFreeSpaceGUIView.java without
+	  any frameworks. Common values moved to fields. Renamed the fields
+	  according to NetBeans' recommendations. Updated the layout. Setting
+	  the UI components according to the options passed on the command
+	  line. Great code simplifications using the new UiUtils class.
+	* AboutBox.java: Rewritten from WipeFreeSpaceGUIAboutBox.java using
+	  the class from JYMAG (https://jymag.sourceforge.io/), without any
+	  frameworks. Updated the layout, mail address and website addresses.
+	* ProgressUpdater.java: Moved the call() to class level. The
+	  constructor no only copies the parameters to fields.
+	* ProgressUpdater.java (call): Fixed the progress bar update values.
+	* EscKeyListener.java: Extracted from WipeFreeSpaceGUI.java to a new
+	  class.
+	* src/BogDroSoft/wfsgui/rsrc/*.svg: New icons, made using Inkscape.
+	* AUTHORS, Makefile, INSTALL, README, *.java, project properties:
+	  Updated the copyright, URLs and the documentation.
+	* run*.*: Updated the paths.
+	* src/BogDroSoft/wfsgui/rsrc/version.properties: A new, common file
+	  with the application's version for the UI and the Makefile.
+	* Makefile: Ported from JYMAG (https://jymag.sourceforge.io/) and
+	  adapted to WipeFreeSpaceGUI2.

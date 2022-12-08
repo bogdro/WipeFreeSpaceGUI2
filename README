@@ -1,0 +1,164 @@
+This is the README file for WipeFreeSpaceGUI2, a Graphical User Interface
+ for the WipeFreeSpace program (https://wipefreespace.sourceforge.io/).
+
+Author: Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+License: GPLv3+
+Copyright (C) 2009-2022 Bogdan Drozdowski
+
+========================= Running
+
+Requirements:
+- WipeFreeSpace
+- JRE, the Java Runtime Environment >= (1.)7.0
+
+Using Apache NetBeans: open the WipeFreeSpaceGUI2 directory as a
+ NetBeans Project and click "Run" (or press F6).
+
+By hand (after unpacking):
+	double-click the WipeFreeSpaceGUI2\dist\WipeFreeSpaceGUI2.jar
+	file (works on MS Windows)
+		or
+	run.bat	(on MS Windows)
+		or
+	run.sh	(on Un*x)
+		or
+	java -jar WipeFreeSpaceGUI2/dist/WipeFreeSpaceGUI2.jar	(on Un*x)
+		or
+	java -jar WipeFreeSpaceGUI2\dist\WipeFreeSpaceGUI2.jar	(on MS Windows)
+
+Read the "INSTALL" file.
+
+========================= Running in the default language (no translations)
+
+Requirements:
+- WipeFreeSpace
+- JRE, the Java Runtime Environment >= (1.)7.0
+
+Using Apache NetBeans: open the WipeFreeSpaceGUI2 directory as a NetBeans
+ Project, right-click the project's root element in the project's tree on the
+ left side of the window (the "Projects" sub-window), then click "Properties".
+ Click "Run" in the tree and put
+	-Duser.language=en -Duser.country=US
+ in the "VM Options" field. Click OK and click "Run" (or press F6).
+
+By hand (after unpacking):
+	run-en.bat	(on MS Windows)
+		or
+	run-en.sh	(on Un*x)
+		or	(on Un*x)
+	java -jar -Duser.language=en -Duser.country=US WipeFreeSpaceGUI2/dist/WipeFreeSpaceGUI2.jar
+		or	(on MS Windows)
+	java -jar -Duser.language=en -Duser.country=US WipeFreeSpaceGUI2\dist\WipeFreeSpaceGUI2.jar
+
+Read the "INSTALL" file.
+
+========================= Compiling (if necessary)
+
+Requirements for compiling:
+
+- JDK, the Java Development Kit >= (1.)7.0
+
+Compiling using Apache NetBeans: open the WipeFreeSpaceGUI2 directory as a
+ NetBeans Project, right-click the project's root element in the project's
+ tree on the left side of the window (the "Projects" sub-window),
+ then click "Build".
+
+Compiling using "ant" from NetBeans (you may need to provide the full
+ path to "ant"):
+
+	cd WipeFreeSpaceGUI2-X.Y
+	ant jar
+
+Compiling by hand :
+	- on Un*x shells try:
+		cd WipeFreeSpaceGUI2/src/BogDroSoft/wfsgui/
+		javac *.java
+	- on MS Windows this could work:
+		cd WipeFreeSpaceGUI2\src\BogDroSoft\wfsgui
+		javac *.java
+
+========================= Usage (GUI)
+
+Use the checkboxes to select the options to pass to WipeFreeSpace.
+Use the "Add filesystem(s)..." and "Remove filesystem(s)" buttons to manage
+ the list of filesystems to wipe.
+Press the "Start" button to start wiping. The "Stop" button can be used to
+ stop wiping, but it stops the WipeFreeSpace program in a way that prevents it
+ from closing the filesystem properly, so damage can occur. Use only when
+ really necessary.
+
+========================= Usage (command line)
+
+The following command-line (case-insensitive) options are supported:
+
+	--all-zeros		- wipe only using zeros
+	-b|--superblock <off>	- superblock offset on the given filesystems
+	-B|--blocksize <size>	- block size on the given filesystems
+	--conf <file>		- read configuration from the given file
+	-f|--force		- continue even if the filesystem has errors
+	--help			- display help
+	--lang LL_CC_VV		- select the language to use by
+					WipeFreeSpaceGUI2: "LL" is the
+					language, "CC" is the country code,
+					"VV" is the variant. Separate them
+					using underscores. Only LL is needed.
+	--last-zero		- additional wiping with zeros
+	--licence, --license	- display license information
+	--method <name>		- use the given method for wiping (read below)
+	-n|--iterations <n>	- number of iterations (wiping passes)
+	--nopart		- do NOT wipe partially used blocks
+	--nounrm		- do NOT wipe undelete data
+	--nowfs			- do NOT wipe unused space
+	--use-ioctl		- disable cache during work (can be DANGEROUS)
+	--no-wipe-zero-blocks	- do NOT wipe all-zero blocks
+	--use-dedicated		- use the program dedicated for the given
+					filesystem type
+	--version, -V		- display program version
+
+WipeFreeSpaceGUI2 passes the wiping method's name directly to WipeFreeSpace.
+ You can choose one of the predefined methods (requires WipeFreeSpace >= 1.5)
+ or enter your own, if your version of WipeFreeSpace supports other methods.
+The following method names (case-insensitive) are available in
+ WipeFreeSpace version 1.5:
+- Gutmann (method similar to Gutmann's, the default, 36 passes)
+- random (shred-like, 25 passes)
+- schneier (Schneier's method, 7 passes, contains ITSG-06)
+- dod (DoD, 3 passes, contains NAVSO P-5239-26 and German Federal
+   Office for Information Security)
+
+========================= Translating
+
+To translate the program to your language, make a copy of each *.properties
+ file in the src/BogDroSoft/wfsgui/i18n/ directory. Rename these files so
+ they end with your language and country code, for example:
+	WfsMainWindow_en_GB.properties
+	AboutBox_de_DE.properties
+	CommandLineParser_pt_BR.properties
+Then open each file in UTF-8 mode and translate the words AFTER the "=" in
+ lines containing user messages. When you've finished all the files, send
+ them to me. Remember: UTF-8, not ISO-8859-X, not windows-XXXX/cp-XXXX.
+NOTE: If you change the words before the "=", your translations won't
+ be seen by the program.
+
+NOTE: Alternatively, use can use the Apache NetBeans IDE to translate.
+ Just open the WipeFreeSpaceGUI2 project, right-click any of the main
+ properties' file, choose "Add" and "Locale". Choose your language and
+ select OK. Now right-click the chosen file and select "Open". Edit the
+ strings in your language.
+
+========================= Reporting problems
+
+Any defects, issues or improvement suggestions can be reported by e-mail
+(you can find it at the top of this file) or in the SourceForge project
+defect manager at https://sourceforge.net/p/wipefreespace/bugs/.
+
+1. Check if you have the newest versions of WipeFreeSpaceGUI2.
+2. Include precise steps for reproducing the error, if possible. This will
+   make finding the problem easier.
+3. If the program crashed, include "wfsgui2.log" in your report. It should be
+   in the current WipeFreeSpaceGUI2 working directory or the temporary files'
+   directory or the user's home directory.
+4. If the program exited normally, but the "wfsgui2.log" still exists after
+   closing the program and is not empty, include it in your report.
+5. Take all the information from the above steps and any additional
+   information you can give and include it in your report.

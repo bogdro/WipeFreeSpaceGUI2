@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="32"
+   viewBox="0 0 64 32"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="loadconf.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1317">WFS GUI load configuration icon</title>
+  <sodipodi:namedview
+     id="namedview18886"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="14.538721"
+     inkscape:cx="34.494093"
+     inkscape:cy="16.094951"
+     inkscape:window-width="1366"
+     inkscape:window-height="701"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-global="true"
+     inkscape:snap-object-midpoints="true"
+     width="64px"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:object-paths="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid18991" />
+  </sodipodi:namedview>
+  <defs
+     id="defs18881">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect9647"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="TriangleInM"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInM"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.4)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path14103" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect41079"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect40882"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect40845"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect40648"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path14112" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect38100"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect38054"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect37865"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect37804"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g38063"
+       transform="matrix(1.9179265,0,0,1.9179265,-35.298142,-25.419132)"
+       style="stroke-width:0.521396">
+      <ellipse
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.197063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path37502-7"
+         cx="24.39385"
+         cy="23.916595"
+         rx="5.0764341"
+         ry="2.3817749" />
+      <ellipse
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.197063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path37502-5"
+         cx="24.422997"
+         cy="21.603815"
+         rx="5.0764341"
+         ry="2.3817749" />
+      <ellipse
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.197063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path37502-3"
+         cx="24.461279"
+         cy="19.176935"
+         rx="5.0764341"
+         ry="2.3817749" />
+      <ellipse
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.197063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path37502"
+         cx="24.500666"
+         cy="16.982578"
+         rx="5.0764341"
+         ry="2.3817749" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.394127;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 19.613208,16.984137 -0.106815,7.828716"
+         id="path37802-5"
+         inkscape:path-effect="#path-effect37865"
+         inkscape:original-d="m 19.613208,16.984137 c -0.0346,2.610701 -0.07021,5.220273 -0.106815,7.828716" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.394127;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 29.5771,16.982578 -0.106815,7.828716"
+         id="path37802-5-6"
+         inkscape:path-effect="#path-effect38054"
+         inkscape:original-d="m 29.5771,16.982578 c -0.0346,2.610701 -0.07021,5.220273 -0.106815,7.828716" />
+    </g>
+    <rect
+       style="opacity:1;fill:#ffff80;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       id="rect38755"
+       width="31.112343"
+       height="9.9850702"
+       x="31.175016"
+       y="8.8091412" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;line-height:1.25;font-family:sans-serif;stroke-width:1"
+       x="39.883167"
+       y="14.240658"
+       id="text20494"
+       transform="scale(0.82893246,1.2063709)"><tspan
+         sodipodi:role="line"
+         x="39.883167"
+         y="14.240658"
+         id="tspan24174"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:'Liberation Mono';-inkscape-font-specification:'Liberation Mono Bold';fill:#008000;stroke-width:0.832766">WFS GUI</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.999996px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)"
+       d="m 22.306513,13.801673 h 5.977655"
+       id="path9645"
+       inkscape:path-effect="#path-effect9647"
+       inkscape:original-d="m 22.306513,13.801673 c 1.993243,6.91e-4 3.985795,6.91e-4 5.977655,0" />
+  </g>
+  <metadata
+     id="metadata1315">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Bogdan 'bogdro' Drozdowski</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title>WFS GUI load configuration icon</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

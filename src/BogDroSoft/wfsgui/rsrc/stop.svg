@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32.0px"
+   height="32.0px"
+   viewBox="0 0 32.0 32.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="stop.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title1096">WFS GUI stop button</title>
+  <sodipodi:namedview
+     id="namedview24401"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="14.538721"
+     inkscape:cx="6.9813569"
+     inkscape:cy="16.507642"
+     inkscape:window-width="1366"
+     inkscape:window-height="701"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid24464" />
+  </sodipodi:namedview>
+  <defs
+     id="defs24396" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.755906;stroke-linecap:round;stroke-linejoin:round"
+       id="path24656"
+       inkscape:flatsided="true"
+       sodipodi:sides="8"
+       sodipodi:cx="16.261595"
+       sodipodi:cy="15.986281"
+       sodipodi:r1="15.948813"
+       sodipodi:r2="14.734781"
+       sodipodi:arg1="0.38825676"
+       sodipodi:arg2="0.78095584"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 31.023345,22.024111 -8.593007,8.669694 -12.206573,0.05423 -8.6696942,-8.593007 -0.054226,-12.2065726 8.5930071,-8.669694 12.206573,-0.054226 8.669694,8.593007 z" />
+  </g>
+  <metadata
+     id="metadata1094">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Bogdan 'bogdro' Drozdowski</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title>WFS GUI stop button</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
