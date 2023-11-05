@@ -86,7 +86,8 @@ Project homepage: https://wipefreespace.sourceforge.io
 	</dependencies>
 
 	<build>
-		<!-- https://maven.apache.org/pom.html -->
+		<!-- Tell Apache Maven to use Apache Ant's directories. -->
+		<!-- The names come from https://maven.apache.org/pom.html -->
 		<sourceDirectory>${project.basedir}/src</sourceDirectory>
 		<testSourceDirectory>${project.basedir}/test</testSourceDirectory>
 		<resources>
