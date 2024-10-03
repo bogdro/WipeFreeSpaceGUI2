@@ -20,16 +20,22 @@
 # General variables
 ###########################################################################
 
+NAME = WipeFreeSpaceGUI2
+
 # core system utilities
 COPY		= /bin/cp -fr
 DEL		= /bin/rm -fr
 MOVE		= /bin/mv -f
 MKDIR		= /bin/mkdir
 LS		= /bin/ls
-PACK		= tar zcf
+# Use the GNU tar format
+# ifneq ($(shell tar --version | grep -i bsd),)
+# PACK_GNUOPTS	= --format gnutar
+# endif
+PACK		= tar $(PACK_GNUOPTS) zcf
 PACK_EXT	= tar.gz
-PACK_EXCL_SRC	= ../wfsgui.exclude
-PACK_OTPS	= --exclude-from=$(PACK_EXCL_SRC)
+SED		= sed
+SED_OPTS	= -i
 SHELL		= sh
 TOUCH		= touch
 
@@ -68,7 +74,7 @@ SVG2PNG		= inkscape
 #VER		= X.X
 include src/BogDroSoft/wfsgui/rsrc/version.properties
 
-NAME = WipeFreeSpaceGUI2
+SED_FIX_POM_VERSION = 's|<version>[^<]*</version>\s*<!--\s*WFSGUI2_VERSION\s*-->|<version>$(VER)</version> <!-- WFSGUI2_VERSION -->|'
 
 FILE_ARCH_SRC = $(NAME)-$(VER)-src.$(PACK_EXT)
 FILE_ARCH_BIN = $(NAME)-$(VER)-bin.$(PACK_EXT)
@@ -98,11 +104,27 @@ pack-src:	$(FILE_ARCH_SRC)
 
 $(FILE_ARCH_SRC): clean Makefile
 	$(DEL) $(DIR_TMP_DIST) $(FILE_ARCH_SRC) $(FILE_ARCH_SRC).asc
+	$(SED) $(SED_OPTS) $(SED_FIX_POM_VERSION) pom.xml
 	$(MKDIR) ../$(DIR_TMP_DIST)
 	$(COPY) * ../$(DIR_TMP_DIST)
 	$(MOVE) ../$(DIR_TMP_DIST) .
-	$(TOUCH) $(PACK_EXCL_SRC)
-	$(PACK) $(FILE_ARCH_SRC) $(PACK_OTPS) $(DIR_TMP_DIST)
+	$(PACK) $(FILE_ARCH_SRC)			\
+		$(DIR_TMP_DIST)/AUTHORS			\
+		$(DIR_TMP_DIST)/build.xml		\
+		$(DIR_TMP_DIST)/ChangeLog		\
+		$(DIR_TMP_DIST)/COPYING			\
+		$(DIR_TMP_DIST)/dist			\
+		$(DIR_TMP_DIST)/INSTALL			\
+		$(DIR_TMP_DIST)/Makefile		\
+		$(DIR_TMP_DIST)/manifest.mf		\
+		$(DIR_TMP_DIST)/nbproject		\
+		$(DIR_TMP_DIST)/NEWS			\
+		$(DIR_TMP_DIST)/pom.xml			\
+		$(DIR_TMP_DIST)/README			\
+		$(DIR_TMP_DIST)/run*.bat		\
+		$(DIR_TMP_DIST)/run*.sh			\
+		$(DIR_TMP_DIST)/src			\
+		$(DIR_TMP_DIST)/test
 	$(DEL) $(DIR_TMP_DIST)
 	$(GNUPG_SIGNER) $(FILE_ARCH_SRC)
 
@@ -111,17 +133,18 @@ pack-bin:	$(FILE_ARCH_BIN) test
 $(FILE_ARCH_BIN):	jar-signed Makefile
 	$(DEL) dist/javadoc
 	$(DEL) $(DIR_TMP_DIST) $(FILE_ARCH_BIN) $(FILE_ARCH_BIN).asc
+	$(SED) $(SED_OPTS) $(SED_FIX_POM_VERSION) pom.xml
 	$(MKDIR) ../$(DIR_TMP_DIST)
 	$(COPY) * ../$(DIR_TMP_DIST)
 	$(MOVE) ../$(DIR_TMP_DIST) .
-	$(TOUCH) $(PACK_EXCL_SRC)
-	$(PACK) $(FILE_ARCH_BIN) $(PACK_OTPS)		\
+	$(PACK) $(FILE_ARCH_BIN)			\
 		$(DIR_TMP_DIST)/AUTHORS			\
-		$(DIR_TMP_DIST)/COPYING			\
 		$(DIR_TMP_DIST)/ChangeLog		\
-		$(DIR_TMP_DIST)/INSTALL			\
-		$(DIR_TMP_DIST)/README			\
+		$(DIR_TMP_DIST)/COPYING			\
 		$(DIR_TMP_DIST)/dist			\
+		$(DIR_TMP_DIST)/INSTALL			\
+		$(DIR_TMP_DIST)/pom.xml			\
+		$(DIR_TMP_DIST)/README			\
 		$(DIR_TMP_DIST)/run*.sh			\
 		$(DIR_TMP_DIST)/run*.bat
 	$(DEL) $(DIR_TMP_DIST)
@@ -131,11 +154,11 @@ pack-javadoc:	$(FILE_ARCH_JAVADOC)
 
 $(FILE_ARCH_JAVADOC):	dist/javadoc Makefile
 	$(DEL) $(DIR_TMP_DIST) $(FILE_ARCH_JAVADOC) $(FILE_ARCH_JAVADOC).asc
+	$(SED) $(SED_OPTS) $(SED_FIX_POM_VERSION) pom.xml
 	$(MKDIR) ../$(DIR_TMP_DIST)
 	$(COPY) * ../$(DIR_TMP_DIST)
 	$(MOVE) ../$(DIR_TMP_DIST) .
-	$(TOUCH) $(PACK_EXCL_SRC)
-	$(PACK) $(FILE_ARCH_JAVADOC) $(PACK_OTPS) $(DIR_TMP_DIST)/dist/javadoc
+	$(PACK) $(FILE_ARCH_JAVADOC) $(DIR_TMP_DIST)/dist/javadoc
 	$(DEL) $(DIR_TMP_DIST)
 	$(GNUPG_SIGNER) $(FILE_ARCH_JAVADOC)
 
