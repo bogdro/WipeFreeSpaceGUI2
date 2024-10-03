@@ -35,10 +35,7 @@ Project homepage: https://wipefreespace.sourceforge.io
 	<description>WipeFreeSpaceGUI2 - a Graphical User Interface for the WipeFreeSpace program</description>
 	<url>https://wipefreespace.sourceforge.io</url>
 
-	<issueManagement>
-		<system>SourceForge</system>
-		<url>https://sourceforge.net/p/wipefreespace/defects/</url>
-	</issueManagement>
+	<inceptionYear>2009</inceptionYear>
 
 	<licenses>
 		<license>
@@ -46,7 +43,6 @@ Project homepage: https://wipefreespace.sourceforge.io
 			<url>https://www.gnu.org/licenses/gpl.html</url>
 		</license>
 	</licenses>
-	<inceptionYear>2009</inceptionYear>
 
 	<developers>
 		<developer>
@@ -59,6 +55,11 @@ Project homepage: https://wipefreespace.sourceforge.io
 			<url>https://sourceforge.net/u/bogdro/profile/</url>
 		</developer>
 	</developers>
+
+	<issueManagement>
+		<system>SourceForge</system>
+		<url>https://sourceforge.net/p/wipefreespace/defects/</url>
+	</issueManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
