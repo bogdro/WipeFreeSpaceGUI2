@@ -18,9 +18,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package BogDroSoft.wfsgui;
+package bogdrosoft.wfsgui;
 
-import BogDroSoft.wfsgui.gui.WfsMainWindow;
+import bogdrosoft.wfsgui.gui.WfsMainWindow;
 import java.io.File;
 import java.util.List;
 import java.util.Locale;

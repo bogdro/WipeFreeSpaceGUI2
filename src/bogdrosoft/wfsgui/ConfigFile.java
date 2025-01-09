@@ -23,7 +23,7 @@
  *
  */
 
-package BogDroSoft.wfsgui;
+package bogdrosoft.wfsgui;
 
 import java.io.BufferedReader;
 import java.io.File;

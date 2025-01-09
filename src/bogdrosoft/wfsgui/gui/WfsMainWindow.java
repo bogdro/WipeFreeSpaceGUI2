@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package BogDroSoft.wfsgui.gui;
+package bogdrosoft.wfsgui.gui;
 
-import BogDroSoft.wfsgui.CommandLineParser;
-import BogDroSoft.wfsgui.ConfigFile;
-import BogDroSoft.wfsgui.Starter;
-import BogDroSoft.wfsgui.Utils;
+import bogdrosoft.wfsgui.CommandLineParser;
+import bogdrosoft.wfsgui.ConfigFile;
+import bogdrosoft.wfsgui.Starter;
+import bogdrosoft.wfsgui.Utils;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.io.File;

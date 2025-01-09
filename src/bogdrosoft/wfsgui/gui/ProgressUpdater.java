@@ -18,9 +18,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package BogDroSoft.wfsgui.gui;
+package bogdrosoft.wfsgui.gui;
 
-import BogDroSoft.wfsgui.Utils;
+import bogdrosoft.wfsgui.Utils;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.concurrent.Callable;

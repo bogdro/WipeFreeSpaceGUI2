@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package BogDroSoft.wfsgui.gui;
+package bogdrosoft.wfsgui.gui;
 
 import java.awt.Component;
 import java.awt.Container;
