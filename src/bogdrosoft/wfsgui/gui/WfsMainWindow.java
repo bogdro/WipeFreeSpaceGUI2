@@ -592,6 +592,20 @@ public class WfsMainWindow extends javax.swing.JFrame
                 });
 
                 optOrderCheckBox.setText(bundle.getString("opt_wiping_order")); // NOI18N
+                optOrderCheckBox.addItemListener(new java.awt.event.ItemListener()
+                {
+                        public void itemStateChanged(java.awt.event.ItemEvent evt)
+                        {
+                                optOrderCheckBoxItemStateChanged(evt);
+                        }
+                });
+                optOrderCheckBox.addChangeListener(new javax.swing.event.ChangeListener()
+                {
+                        public void stateChanged(javax.swing.event.ChangeEvent evt)
+                        {
+                                optOrderCheckBoxStateChanged(evt);
+                        }
+                });
 
                 wipingOrderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PATTERN", "BLOCK" }));
                 wipingOrderComboBox.setEnabled(false);
@@ -1134,6 +1148,11 @@ public class WfsMainWindow extends javax.swing.JFrame
 		{
 			params.add ("--use-dedicated");	// NOI18N
 		}
+		if ( optOrderCheckBox.isSelected() )
+		{
+			params.add ("--order");	// NOI18N
+			params.add (wipingOrderComboBox.getSelectedItem ().toString ());
+		}
 		params.add ("--verbose");	// always use verbose output	// NOI18N
 		for ( int i = 0; i < model.getSize (); i++ )
 		{
@@ -1214,6 +1233,8 @@ public class WfsMainWindow extends javax.swing.JFrame
 		superblockTextField.setEnabled (false);
 		optNoWipeZeroBlkCheckBox.setEnabled (false);
 		optUseDedicatedCheckBox.setEnabled (false);
+		optOrderCheckBox.setEnabled (false);
+		wipingOrderComboBox.setEnabled (false);
         }//GEN-LAST:event_startButtonActionPerformed
 
         private void stopButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_stopButtonActionPerformed
@@ -1245,6 +1266,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 		superblockTextField.setEnabled (true);
 		optNoWipeZeroBlkCheckBox.setEnabled (true);
 		optUseDedicatedCheckBox.setEnabled (true);
+		optOrderCheckBox.setEnabled (true);
 		if ( optBlocksizeCheckBox.isSelected() )
 		{
 			blocksizeTextField.setEnabled (true);
@@ -1260,6 +1282,10 @@ public class WfsMainWindow extends javax.swing.JFrame
 		if ( optSuperblockCheckBox.isSelected() )
 		{
 			superblockTextField.setEnabled (true);
+		}
+		if ( optOrderCheckBox.isSelected() )
+		{
+			wipingOrderComboBox.setEnabled (true);
 		}
 
 		nowWipingNameLabel.setText ("-");	// NOI18N
@@ -1673,6 +1699,30 @@ public class WfsMainWindow extends javax.swing.JFrame
 			UiUtils.showErrorMessage(this, ex.toString ());
 		}
         }//GEN-LAST:event_aboutButtonActionPerformed
+
+        private void optOrderCheckBoxItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_optOrderCheckBoxItemStateChanged
+        {//GEN-HEADEREND:event_optOrderCheckBoxItemStateChanged
+		if ( evt.getStateChange () == ItemEvent.SELECTED )
+		{
+			wipingOrderComboBox.setEnabled (true);
+		}
+		else
+		{
+			wipingOrderComboBox.setEnabled (false);
+		}
+        }//GEN-LAST:event_optOrderCheckBoxItemStateChanged
+
+        private void optOrderCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optOrderCheckBoxStateChanged
+        {//GEN-HEADEREND:event_optOrderCheckBoxStateChanged
+		if ( optOrderCheckBox.isSelected () )
+		{
+			wipingOrderComboBox.setEnabled (true);
+		}
+		else
+		{
+			wipingOrderComboBox.setEnabled (false);
+		}
+        }//GEN-LAST:event_optOrderCheckBoxStateChanged
 
 	/**
 	 * Asks the user to force stop wiping.

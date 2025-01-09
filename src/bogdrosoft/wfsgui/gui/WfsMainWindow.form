@@ -792,6 +792,10 @@
                   <ResourceString bundle="bogdrosoft/wfsgui/i18n/WfsMainWindow.properties" key="opt_wiping_order" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="optOrderCheckBoxItemStateChanged"/>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="optOrderCheckBoxStateChanged"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="wipingOrderComboBox">
               <Properties>
