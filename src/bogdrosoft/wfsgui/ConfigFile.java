@@ -58,6 +58,8 @@ public class ConfigFile
 	private String methodName;
 	private boolean noWipeZeroBlocks = false;
 	private boolean useDedicated = false;
+	private boolean selectOrder;
+	private String wipingOrder;
 	// main window's parameters:
 	private int x;
 	private int y;
@@ -110,7 +112,11 @@ public class ConfigFile
 	private static final Pattern NO_WIPE_ZERO_PATTERN = Pattern.compile
 		("no_wipe_zero_blocks\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);	// NOI18N
 	private static final Pattern USE_DEDICATED_PATTERN = Pattern.compile
-		("use_dedicated\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
+		("use_dedicated\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);	// NOI18N
+	private static final Pattern IS_WIPING_ORDER_CHOSEN_PATTERN = Pattern.compile
+		("is_order\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
+	private static final Pattern WIPING_ORDER_PATTERN = Pattern.compile
+		("order\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
 
 	private static final Pattern COMMENT_PATTERN = Pattern.compile
 		("^\\s*#.*");		// NOI18N
@@ -174,6 +180,8 @@ public class ConfigFile
 		Matcher methodNameM;
 		Matcher noWipeZeroM;
 		Matcher useDedicatedM;
+		Matcher isOrderM;
+		Matcher orderM;
 
 		BufferedReader br = null;
 		try
@@ -227,6 +235,8 @@ public class ConfigFile
 				methodNameM = METHOD_NAME_PATTERN.matcher (line);
 				noWipeZeroM = NO_WIPE_ZERO_PATTERN.matcher (line);
 				useDedicatedM = USE_DEDICATED_PATTERN.matcher (line);
+				isOrderM = IS_WIPING_ORDER_CHOSEN_PATTERN.matcher(line);
+				orderM = WIPING_ORDER_PATTERN.matcher(line);
 
 				if ( allzeroM.matches () )
 				{
@@ -471,6 +481,21 @@ public class ConfigFile
 						Utils.handleException (ex, "ConfigFile.read.parseInt (use_dedicated)");	// NOI18N
 					}
 				}
+				else if ( isOrderM.matches () )
+				{
+					try
+					{
+						selectOrder = Integer.parseInt (isOrderM.group (1)) != 0;
+					}
+					catch (Exception ex)
+					{
+						Utils.handleException (ex, "ConfigFile.read.parseInt (is_order)");	// NOI18N
+					}
+				}
+				else if ( orderM.matches () )
+				{
+					wipingOrder = orderM.group (1);
+				}
 			} while (true);
 			br.close ();
 		}
@@ -554,6 +579,8 @@ public class ConfigFile
 			pw.println ("method = " + methodName);					// NOI18N
 			pw.println ("no_wipe_zero_blocks = " + String.valueOf ((noWipeZeroBlocks)? 1 : 0));	// NOI18N
 			pw.println ("use_dedicated = " + String.valueOf ((useDedicated)? 1 : 0));		// NOI18N
+			pw.println ("is_order = " + String.valueOf ((selectOrder)? 1 : 0));	// NOI18N
+			pw.println ("order = " + wipingOrder);					// NOI18N
 			pw.close ();
 		}
 		catch (Exception ex)
@@ -773,6 +800,24 @@ public class ConfigFile
 		useDedicated = v;
 	}
 
+	/**
+	 * Sets the selectOrder variable.
+	 * @param v the new value.
+	 */
+	public void setIsOrderSelected (boolean v)
+	{
+		selectOrder = v;
+	}
+
+	/**
+	 * Sets the wiping order variable.
+	 * @param v the new value.
+	 */
+	public void setWipingOrder (String v)
+	{
+		wipingOrder = v;
+	}
+
 	// ================ getters:
 
 	/**
@@ -971,5 +1016,23 @@ public class ConfigFile
 	public boolean getIsUseDedicated ()
 	{
 		return useDedicated;
+	}
+
+	/**
+	 * Gets the selectOrder variable.
+	 * @return the variable's value.
+	 */
+	public boolean getIsOrder ()
+	{
+		return selectOrder;
+	}
+
+	/**
+	 * Gets the wiping order variable.
+	 * @return the variable's value.
+	 */
+	public String getWipingOrder ()
+	{
+		return wipingOrder;
 	}
 }

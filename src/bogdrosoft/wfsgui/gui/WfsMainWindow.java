@@ -1363,6 +1363,15 @@ public class WfsMainWindow extends javax.swing.JFrame
 				{
 					wipingMethodComboBox.setSelectedIndex(0);
 				}
+				optOrderCheckBox.setSelected(cfg.getIsOrder());
+				if (  cfg.getWipingOrder () != null && ! cfg.getWipingOrder ().isEmpty() )
+				{
+					wipingOrderComboBox.setSelectedItem (cfg.getWipingOrder ());
+				}
+				else
+				{
+					wipingOrderComboBox.setSelectedIndex(0);
+				}
 				// filesystem list
 				List<String> fslist = cfg.getFSList();
 				if ( fslist != null )
@@ -1532,6 +1541,12 @@ public class WfsMainWindow extends javax.swing.JFrame
 				if ( wipingMethod != null )
 				{
 					cfg.setMethodName (wipingMethod.toString ());
+				}
+				cfg.setIsOrderSelected(optOrderCheckBox.isSelected ());
+				Object wipingOrder = wipingOrderComboBox.getSelectedItem ();
+				if ( wipingOrder != null )
+				{
+					cfg.setWipingOrder(wipingOrder.toString ());
 				}
 				cfg.setUseDedicated(optUseDedicatedCheckBox.isSelected());
 				cfg.setNoWipeZeroBlocks(optNoWipeZeroBlkCheckBox.isSelected());
