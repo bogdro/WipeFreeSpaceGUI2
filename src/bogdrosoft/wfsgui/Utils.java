@@ -328,6 +328,7 @@ public class Utils
 				}
 			}
 		}
+		handleException (ex.getCause(), null);
 	}
 	/**
 	 * This function joins 2 arrays of bytes together.
