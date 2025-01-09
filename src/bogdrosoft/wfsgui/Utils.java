@@ -67,6 +67,8 @@ public class Utils
 	private static final String UNKNOWN_METHOD = "<Unknown method>";	// NOI18N
 	private static final String UNKNOWN_FILE = "<Unknown file>";		// NOI18N
 
+	private static final boolean DEBUG_EXCEPTIONS = true;
+
 	private Utils ()
 	{
 		// non-instantiable
@@ -290,8 +292,9 @@ public class Utils
 						if ( clazz != null )
 						{
 							// let's display only our files
-							if ( ! clazz.startsWith
-								("BogDro") )	// NOI18N
+							if ( ! DEBUG_EXCEPTIONS
+								&& ! clazz.startsWith
+								("bogdro") )	// NOI18N
 							{
 								continue;
 							}
