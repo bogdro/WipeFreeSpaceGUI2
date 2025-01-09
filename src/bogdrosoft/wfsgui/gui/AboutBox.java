@@ -87,10 +87,10 @@ public class AboutBox extends javax.swing.JDialog
                 licValue = new javax.swing.JLabel();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/AboutBox"); // NOI18N
+                java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/AboutBox"); // NOI18N
                 setTitle(bundle.getString("about_title")); // NOI18N
 
-                wfsGuiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/about.png"))); // NOI18N
+                wfsGuiLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/about.png"))); // NOI18N
                 wfsGuiLabel.setText("WipeFreeSpaceGUI2 " /* NOI18N */ + WfsMainWindow.WFSGUI_VERSION);
 
                 authorLabel.setLabelFor(authorValLabel);
@@ -116,7 +116,7 @@ public class AboutBox extends javax.swing.JDialog
                 licenseArea.setEditable(false);
                 licenseArea.setColumns(20);
                 licenseArea.setRows(3);
-                licenseArea.setText(getFileContents (getClass ().getClassLoader ().getResourceAsStream ("BogDroSoft/wfsgui/rsrc/GNU-GPLv3.txt" /* NOI18N */)));
+                licenseArea.setText(getFileContents (getClass ().getClassLoader ().getResourceAsStream ("bogdrosoft/wfsgui/rsrc/GNU-GPLv3.txt" /* NOI18N */)));
                 licenseArea.setCaretPosition(0);
                 jScrollPane1.setViewportView(licenseArea);
 
@@ -217,7 +217,7 @@ public class AboutBox extends javax.swing.JDialog
                                 .addContainerGap())
                 );
 
-                java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/WfsMainWindow"); // NOI18N
+                java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/WfsMainWindow"); // NOI18N
                 fontSizeSpinner.getAccessibleContext().setAccessibleName(bundle1.getString("font_size_spinner.accname")); // NOI18N
                 fontSizeSpinner.getAccessibleContext().setAccessibleDescription(bundle1.getString("font_size_spinner.accdesc")); // NOI18N
 

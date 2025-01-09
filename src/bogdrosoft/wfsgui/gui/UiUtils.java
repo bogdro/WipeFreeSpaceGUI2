@@ -47,7 +47,7 @@ public class UiUtils
 {
 	/* use our own in case MainWindow doesn't load */
 	private static final String ERR_STRING
-		= ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/WfsMainWindow")
+		= ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/WfsMainWindow")
 		.getString("Error");
 
 	private static final WfsProgramFileChooser WFS_FC = new WfsProgramFileChooser();

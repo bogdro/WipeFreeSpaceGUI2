@@ -56,13 +56,13 @@ public class WfsMainWindow extends javax.swing.JFrame
 
 	/** Current version number as a String. */
 	public static final String WFSGUI_VERSION =
-		ResourceBundle.getBundle("BogDroSoft/wfsgui/rsrc/version")	// NOI18N
+		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
 		.getString("VER");	// NOI18N
 
 	private static final Color GREEN_LABEL_COLOR = new Color (0, 204, 0);
 	// i18n stuff:
 	private static final ResourceBundle MAIN_BUNDLE =
-		ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/WfsMainWindow");
+		ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/WfsMainWindow");
 
 	private static final String WFSGUI_CONFIG_FILES = MAIN_BUNDLE.getString("WipeFreeSpace_configuration_files");
 	private static final String QUESTION_TITLE = MAIN_BUNDLE.getString("Question");
@@ -260,9 +260,9 @@ public class WfsMainWindow extends javax.swing.JFrame
                 wfsBrowseButton = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-                java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/WfsMainWindow"); // NOI18N
+                java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/WfsMainWindow"); // NOI18N
                 setTitle(bundle.getString("wfsgui_title")); // NOI18N
-                setIconImage((new javax.swing.ImageIcon (getClass ().getResource ("/BogDroSoft/wfsgui/rsrc/wfsgui-icon.png"))).getImage ());
+                setIconImage((new javax.swing.ImageIcon (getClass ().getResource ("/bogdrosoft/wfsgui/rsrc/wfsgui-icon.png"))).getImage ());
                 addWindowListener(new java.awt.event.WindowAdapter()
                 {
                         public void windowClosing(java.awt.event.WindowEvent evt)
@@ -280,7 +280,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                 fsList.setFocusable(false);
                 fsListScrollPane.setViewportView(fsList);
 
-                addFsBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/add_fs.png"))); // NOI18N
+                addFsBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/add_fs.png"))); // NOI18N
                 addFsBut.setText(bundle.getString("but_add_fs")); // NOI18N
                 addFsBut.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -290,7 +290,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                delFsBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/del_fs.png"))); // NOI18N
+                delFsBut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/del_fs.png"))); // NOI18N
                 delFsBut.setText(bundle.getString("but_del_fs")); // NOI18N
                 delFsBut.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -478,7 +478,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                 fontSizeLabel.setLabelFor(fontSizeSpinner);
                 fontSizeLabel.setText(bundle.getString("font_size")); // NOI18N
 
-                startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/start.png"))); // NOI18N
+                startButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/start.png"))); // NOI18N
                 startButton.setText(bundle.getString("but_start_wiping")); // NOI18N
                 startButton.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -488,7 +488,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/stop.png"))); // NOI18N
+                stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/stop.png"))); // NOI18N
                 stopButton.setText(bundle.getString("but_stop_wiping")); // NOI18N
                 stopButton.setEnabled(false);
                 stopButton.addActionListener(new java.awt.event.ActionListener()
@@ -499,7 +499,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                loadConfButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/loadconf.png"))); // NOI18N
+                loadConfButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/loadconf.png"))); // NOI18N
                 loadConfButton.setText(bundle.getString("but_load_conf")); // NOI18N
                 loadConfButton.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -509,7 +509,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/saveconf.png"))); // NOI18N
+                saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/saveconf.png"))); // NOI18N
                 saveButton.setText(bundle.getString("but_save_conf")); // NOI18N
                 saveButton.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -519,7 +519,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                aboutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/about.png"))); // NOI18N
+                aboutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/about.png"))); // NOI18N
                 aboutButton.setText(bundle.getString("but_about")); // NOI18N
                 aboutButton.addActionListener(new java.awt.event.ActionListener()
                 {
@@ -529,7 +529,7 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
-                exitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BogDroSoft/wfsgui/rsrc/exit.png"))); // NOI18N
+                exitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bogdrosoft/wfsgui/rsrc/exit.png"))); // NOI18N
                 exitButton.setText(bundle.getString("but_exit")); // NOI18N
                 exitButton.addActionListener(new java.awt.event.ActionListener()
                 {

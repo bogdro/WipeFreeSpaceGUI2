@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-      <ResourceString bundle="BogDroSoft/wfsgui/i18n/AboutBox.properties" key="about_title" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+      <ResourceString bundle="bogdrosoft/wfsgui/i18n/AboutBox.properties" key="about_title" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -124,7 +124,7 @@
             <Component class="javax.swing.JLabel" name="wfsGuiLabel">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/BogDroSoft/wfsgui/rsrc/about.png"/>
+                  <Image iconType="3" name="/bogdrosoft/wfsgui/rsrc/about.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="&quot;WipeFreeSpaceGUI2 &quot; /* NOI18N */ + WfsMainWindow.WFSGUI_VERSION" type="code"/>
@@ -137,7 +137,7 @@
                   <ComponentRef name="authorValLabel"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/AboutBox.properties" key="lab_author" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/AboutBox.properties" key="lab_author" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
             </Component>
@@ -149,7 +149,7 @@
             <Component class="javax.swing.JLabel" name="wwwLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/AboutBox.properties" key="lab_www" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/AboutBox.properties" key="lab_www" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
             </Component>
@@ -161,10 +161,10 @@
               </Properties>
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/WfsMainWindow.properties" key="font_size_spinner.accname" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/WfsMainWindow.properties" key="font_size_spinner.accname" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
                 <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/WfsMainWindow.properties" key="font_size_spinner.accdesc" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/WfsMainWindow.properties" key="font_size_spinner.accdesc" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </AccessibilityProperties>
               <Events>
@@ -178,7 +178,7 @@
                   <ComponentRef name="fontSizeSpinner"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/AboutBox.properties" key="font_size" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/AboutBox.properties" key="font_size" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
             </Component>
@@ -195,7 +195,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="3"/>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="getFileContents (getClass ().getClassLoader ().getResourceAsStream (&quot;BogDroSoft/wfsgui/rsrc/GNU-GPLv3.txt&quot; /* NOI18N */))" type="code"/>
+                      <Connection code="getFileContents (getClass ().getClassLoader ().getResourceAsStream (&quot;bogdrosoft/wfsgui/rsrc/GNU-GPLv3.txt&quot; /* NOI18N */))" type="code"/>
                     </Property>
                     <Property name="caretPosition" type="int" value="0"/>
                   </Properties>
@@ -244,7 +244,7 @@
             <Component class="javax.swing.JLabel" name="licLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                  <ResourceString bundle="BogDroSoft/wfsgui/i18n/AboutBox.properties" key="License:_" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/AboutBox.properties" key="License:_" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
                 </Property>
               </Properties>
             </Component>

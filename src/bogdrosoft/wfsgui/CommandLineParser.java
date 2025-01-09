@@ -60,7 +60,7 @@ public class CommandLineParser
 
 	// ----------- i18n stuff
 	private static final ResourceBundle CMDLINE_BUNDLE =
-		ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/CommandLineParser");
+		ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/CommandLineParser");
 	private static final String PROG_INTRO_STRING = CMDLINE_BUNDLE.getString("A_GUI_for_WipeFreeSpace");
 	private static final String CMD_LINE_STR = CMDLINE_BUNDLE.getString("Commandline_options")
 		+ Utils.COLON +

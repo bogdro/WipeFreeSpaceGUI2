@@ -33,7 +33,7 @@ import java.util.ResourceBundle;
 public class Starter
 {
 	private static final String START_ERROR
-		= ResourceBundle.getBundle("BogDroSoft/wfsgui/i18n/Starter")
+		= ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/Starter")
 		.getString("WfsGui2_Start_Error");
 
 	private static String logFile = "wfsgui2.log";	// NOI18N
