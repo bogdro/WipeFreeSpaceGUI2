@@ -143,6 +143,15 @@ public class WfsMainWindow extends javax.swing.JFrame
 		optNoWipeZeroBlkCheckBox.setSelected(CommandLineParser.isNoWipeZeroBlocks());
 		optSuperblockCheckBox.setSelected(CommandLineParser.isSuperOff());
 		optUseDedicatedCheckBox.setSelected(CommandLineParser.isUseDedicated());
+		optOrderCheckBox.setSelected(CommandLineParser.isOrder());
+		if ( CommandLineParser.getWipingOrder() != null )
+		{
+			wipingOrderComboBox.setSelectedItem (CommandLineParser.getWipingOrder());
+		}
+		else
+		{
+			wipingOrderComboBox.setSelectedIndex(0);
+		}
 		if ( CommandLineParser.getSuperOffValue() != null)
 		{
 			superblockTextField.setText(CommandLineParser.getSuperOffValue());

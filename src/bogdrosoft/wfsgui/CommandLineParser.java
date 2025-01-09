@@ -50,6 +50,8 @@ public class CommandLineParser
 	private static volatile boolean ioctl = false;
 	private static volatile boolean noWipeZeroBlocks = false;
 	private static volatile boolean useDedicated = false;
+	private static volatile boolean isOrder = false;
+	private static volatile String wipingOrder;
 	private static volatile int x = 0;
 	private static volatile int y = 0;
 	private static volatile int width;
@@ -100,6 +102,8 @@ public class CommandLineParser
 		CMDLINE_BUNDLE.getString("do_NOT_wipe_unused") +
 		"\n--no-wipe-zero-blocks\t- " +	// NOI18N
 		CMDLINE_BUNDLE.getString("do_NOT_wipe_zero_blocks") +
+		"\n--order <type>\t\t- " +	// NOI18N
+		CMDLINE_BUNDLE.getString("help_wiping_order") +
 		"\n--use-dedicated\t\t- " +	// NOI18N
 		CMDLINE_BUNDLE.getString("use_dedicated") +
 		"\n--use-ioctl\t\t- " +	// NOI18N
@@ -275,6 +279,24 @@ public class CommandLineParser
 	}
 
 	/**
+	 * Gets the current "is wiping order selected" property value.
+	 * @return the current "is wiping order selected" property value.
+	 */
+	public synchronized static boolean isOrder ()
+	{
+		return isOrder;
+	}
+
+	/**
+	 * Gets the current "wipingOrder" property value.
+	 * @return the current "wipingOrder" property value.
+	 */
+	public synchronized static String getWipingOrder ()
+	{
+		return wipingOrder;
+	}
+
+	/**
 	 * Gets the current X coordinate.
 	 * @return the current X coordinate.
 	 */
@@ -381,6 +403,8 @@ public class CommandLineParser
 			height = cfg.getHeight();
 			fontSize = cfg.getFontSizeValue();
 			wfsPath = cfg.getWfsPath();
+			isOrder = cfg.getIsOrder();
+			wipingOrder = cfg.getWipingOrder();
 		}
 		catch (Exception ex)
 		{
@@ -552,6 +576,15 @@ public class CommandLineParser
 			else if ( args[i].toLowerCase (Locale.ENGLISH).equals ("--no-wipe-zero-blocks") )	// NOI18N
 			{
 				noWipeZeroBlocks = true;
+			}
+			else if ( args[i].toLowerCase (Locale.ENGLISH).equals ("--order") )	// NOI18N
+			{
+				isOrder = true;
+				if ( i+1 < args.length )
+				{
+					wipingOrder = args[i+1];
+				}
+				i++;
 			}
 			else if ( args[i].toLowerCase (Locale.ENGLISH).equals ("--use-dedicated") )	// NOI18N
 			{
