@@ -82,11 +82,13 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="wipingOptsLabel" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="optMethodCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="pathToWfsLabel" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="wipingMethodComboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                                                      <Component id="pathToWfsTextField" min="-2" pref="243" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="wfsBrowseButton" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="optAllZerosCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -106,9 +108,19 @@
                                                               <Component id="iterationsTextField" min="-2" pref="70" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Component id="optLastZeroCheckBox" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="optMethodCheckBox" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="wipingMethodComboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="optOrderCheckBox" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                                              <Component id="wipingOrderComboBox" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
                                                           <Component id="optNoPartCheckBox" min="-2" max="-2" attributes="0"/>
                                                           <Component id="optNoUnrmCheckBox" min="-2" max="-2" attributes="0"/>
                                                           <Component id="optNoWfsCheckBox" min="-2" max="-2" attributes="0"/>
@@ -116,13 +128,6 @@
                                                           <Component id="optNoWipeZeroBlkCheckBox" min="-2" max="-2" attributes="0"/>
                                                           <Component id="optUseDedicatedCheckBox" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="pathToWfsLabel" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="pathToWfsTextField" min="-2" pref="243" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="wfsBrowseButton" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -222,6 +227,11 @@
                                       <Component id="optUseDedicatedCheckBox" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="optIoctlCheckBox" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="optOrderCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="wipingOrderComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <Component id="fsListScrollPane" min="-2" pref="197" max="-2" attributes="0"/>
                               </Group>
@@ -775,6 +785,27 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="wfsBrowseButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="optOrderCheckBox">
+              <Properties>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+                  <ResourceString bundle="bogdrosoft/wfsgui/i18n/WfsMainWindow.properties" key="opt_wiping_order" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="wipingOrderComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="PATTERN"/>
+                    <StringItem index="1" value="BLOCK"/>
+                  </StringArray>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

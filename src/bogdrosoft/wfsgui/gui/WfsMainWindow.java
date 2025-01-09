@@ -258,6 +258,8 @@ public class WfsMainWindow extends javax.swing.JFrame
                 wfsErrorsScrollPane = new javax.swing.JScrollPane();
                 wfsErrorsTextArea = new javax.swing.JTextArea();
                 wfsBrowseButton = new javax.swing.JButton();
+                optOrderCheckBox = new javax.swing.JCheckBox();
+                wipingOrderComboBox = new javax.swing.JComboBox<>();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/WfsMainWindow"); // NOI18N
@@ -589,6 +591,11 @@ public class WfsMainWindow extends javax.swing.JFrame
                         }
                 });
 
+                optOrderCheckBox.setText(bundle.getString("opt_wiping_order")); // NOI18N
+
+                wipingOrderComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PATTERN", "BLOCK" }));
+                wipingOrderComboBox.setEnabled(false);
+
                 javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
                 mainPanel.setLayout(mainPanelLayout);
                 mainPanelLayout.setHorizontalGroup(
@@ -620,9 +627,11 @@ public class WfsMainWindow extends javax.swing.JFrame
                                                                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                         .addComponent(wipingOptsLabel)
                                                                                         .addGroup(mainPanelLayout.createSequentialGroup()
-                                                                                                .addComponent(optMethodCheckBox)
+                                                                                                .addComponent(pathToWfsLabel)
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(wipingMethodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                .addComponent(pathToWfsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                .addComponent(wfsBrowseButton))
                                                                                         .addGroup(mainPanelLayout.createSequentialGroup()
                                                                                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                                         .addComponent(optAllZerosCheckBox)
@@ -639,21 +648,23 @@ public class WfsMainWindow extends javax.swing.JFrame
                                                                                                                 .addComponent(optIterCheckBox)
                                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                                                 .addComponent(iterationsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                        .addComponent(optLastZeroCheckBox))
-                                                                                                .addGap(18, 18, 18)
+                                                                                                        .addComponent(optLastZeroCheckBox)
+                                                                                                        .addGroup(mainPanelLayout.createSequentialGroup()
+                                                                                                                .addComponent(optMethodCheckBox)
+                                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                                .addComponent(wipingMethodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                        .addGroup(mainPanelLayout.createSequentialGroup()
+                                                                                                                .addComponent(optOrderCheckBox)
+                                                                                                                .addGap(4, 4, 4)
+                                                                                                                .addComponent(wipingOrderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                                                         .addComponent(optNoPartCheckBox)
                                                                                                         .addComponent(optNoUnrmCheckBox)
                                                                                                         .addComponent(optNoWfsCheckBox)
                                                                                                         .addComponent(optIoctlCheckBox)
                                                                                                         .addComponent(optNoWipeZeroBlkCheckBox)
-                                                                                                        .addComponent(optUseDedicatedCheckBox)))
-                                                                                        .addGroup(mainPanelLayout.createSequentialGroup()
-                                                                                                .addComponent(pathToWfsLabel)
-                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(pathToWfsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(wfsBrowseButton))))
+                                                                                                        .addComponent(optUseDedicatedCheckBox)))))
                                                                         .addGroup(mainPanelLayout.createSequentialGroup()
                                                                                 .addComponent(nowWipingDescLabel)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -735,7 +746,11 @@ public class WfsMainWindow extends javax.swing.JFrame
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(optUseDedicatedCheckBox)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(optIoctlCheckBox))
+                                                                .addComponent(optIoctlCheckBox)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                        .addComponent(optOrderCheckBox)
+                                                                        .addComponent(wipingOrderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                         .addComponent(fsListScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1825,6 +1840,7 @@ public class WfsMainWindow extends javax.swing.JFrame
         private javax.swing.JCheckBox optNoUnrmCheckBox;
         private javax.swing.JCheckBox optNoWfsCheckBox;
         private javax.swing.JCheckBox optNoWipeZeroBlkCheckBox;
+        private javax.swing.JCheckBox optOrderCheckBox;
         private javax.swing.JCheckBox optSuperblockCheckBox;
         private javax.swing.JCheckBox optUseDedicatedCheckBox;
         private javax.swing.JLabel pathToWfsLabel;
@@ -1846,5 +1862,6 @@ public class WfsMainWindow extends javax.swing.JFrame
         private javax.swing.JTextArea wfsOutputTextArea;
         private javax.swing.JComboBox<String> wipingMethodComboBox;
         private javax.swing.JLabel wipingOptsLabel;
+        private javax.swing.JComboBox<String> wipingOrderComboBox;
         // End of variables declaration//GEN-END:variables
 }
