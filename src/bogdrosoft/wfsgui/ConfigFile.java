@@ -36,34 +36,6 @@ import java.util.regex.Pattern;
  */
 public class ConfigFile
 {
-	private File cfgFile;
-	// wipefreespace parameters:
-	private boolean allzeros;
-	private int superOffset = -1;
-	private int blockSize = -1;
-	private boolean force;
-	private int iterations = -1;
-	private boolean lastZero;
-	private boolean nopart;
-	private boolean nounrm;
-	private boolean nowfs;
-	private boolean ioctl;
-	private List<String> fsList;
-	private String wfsPath;
-	private boolean selectMethod;
-	private String methodName;
-	private boolean noWipeZeroBlocks = false;
-	private boolean useDedicated = false;
-	private boolean selectOrder;
-	private String wipingOrder;
-	// main window's parameters:
-	private int x;
-	private int y;
-	private int width;
-	private int height;
-	private boolean isMax;
-	private int fontSize;
-
 	// patterns for matching:
 	private static final Pattern ALL_ZERO_PATTERN = Pattern.compile
 		("all_zero\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
@@ -116,6 +88,34 @@ public class ConfigFile
 
 	private static final Pattern COMMENT_PATTERN = Pattern.compile
 		("^\\s*#.*");		// NOI18N
+
+	private File cfgFile;
+	// wipefreespace parameters:
+	private boolean allzeros;
+	private int superOffset = -1;
+	private int blockSize = -1;
+	private boolean force;
+	private int iterations = -1;
+	private boolean lastZero;
+	private boolean nopart;
+	private boolean nounrm;
+	private boolean nowfs;
+	private boolean ioctl;
+	private List<String> fsList;
+	private String wfsPath;
+	private boolean selectMethod;
+	private String methodName;
+	private boolean noWipeZeroBlocks = false;
+	private boolean useDedicated = false;
+	private boolean selectOrder;
+	private String wipingOrder;
+	// main window's parameters:
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	private boolean isMax;
+	private int fontSize;
 
 	/**
 	 * Creates a new instance of ConfigFile.

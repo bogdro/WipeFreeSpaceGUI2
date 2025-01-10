@@ -29,6 +29,11 @@ import java.util.Calendar;
  */
 public class Utils
 {
+	/**
+	 * A sample uncaught-exception handler instance for threads.
+	 */
+	public static final UncExHndlr handler = new UncExHndlr ();
+
 	/** An empty String. */
 	public static final String EMPTY_STR = "";	// NOI18N
 	/** A String with the Carriage Return character. */
@@ -354,11 +359,6 @@ public class Utils
 		System.arraycopy (toAdd, 0, ret, orig.length, toAdd.length);
 		return ret;
 	}
-
-	/**
-	 * A sample uncaught-exception handler instance for threads.
-	 */
-	public static final UncExHndlr handler = new UncExHndlr ();
 
 	/**
 	 * A sample uncaught-exception handler class for threads.

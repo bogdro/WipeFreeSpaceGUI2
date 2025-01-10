@@ -32,34 +32,6 @@ import java.util.ResourceBundle;
  */
 public class CommandLineParser
 {
-	private static volatile boolean isMax = false;
-	private static volatile boolean onlyZeros = false;
-	private static volatile boolean superOff = false;
-	private static volatile String superOffValue;
-	private static volatile boolean blkSize = false;
-	private static volatile String blkSizeValue;
-	private static volatile boolean force = false;
-	private static volatile boolean lastZero = false;
-	private static volatile boolean method = false;
-	private static volatile String methodName;
-	private static volatile boolean iter = false;
-	private static volatile String iterationsValue;
-	private static volatile boolean nopart = false;
-	private static volatile boolean nounrm = false;
-	private static volatile boolean nowfs = false;
-	private static volatile boolean ioctl = false;
-	private static volatile boolean noWipeZeroBlocks = false;
-	private static volatile boolean useDedicated = false;
-	private static volatile boolean isOrder = false;
-	private static volatile String wipingOrder;
-	private static volatile int x = 0;
-	private static volatile int y = 0;
-	private static volatile int width;
-	private static volatile int height;
-	private static volatile int fontSize;
-	private static volatile List<String> fsList;
-	private static volatile String wfsPath;
-
 	// ----------- i18n stuff
 	private static final ResourceBundle CMDLINE_BUNDLE =
 		ResourceBundle.getBundle("bogdrosoft/wfsgui/i18n/CommandLineParser");
@@ -112,6 +84,34 @@ public class CommandLineParser
 		CMDLINE_BUNDLE.getString("display_version")
 		;
 	private static final String VER_WORD = CMDLINE_BUNDLE.getString("Version");
+
+	private static volatile boolean isMax = false;
+	private static volatile boolean onlyZeros = false;
+	private static volatile boolean superOff = false;
+	private static volatile String superOffValue;
+	private static volatile boolean blkSize = false;
+	private static volatile String blkSizeValue;
+	private static volatile boolean force = false;
+	private static volatile boolean lastZero = false;
+	private static volatile boolean method = false;
+	private static volatile String methodName;
+	private static volatile boolean iter = false;
+	private static volatile String iterationsValue;
+	private static volatile boolean nopart = false;
+	private static volatile boolean nounrm = false;
+	private static volatile boolean nowfs = false;
+	private static volatile boolean ioctl = false;
+	private static volatile boolean noWipeZeroBlocks = false;
+	private static volatile boolean useDedicated = false;
+	private static volatile boolean isOrder = false;
+	private static volatile String wipingOrder;
+	private static volatile int x = 0;
+	private static volatile int y = 0;
+	private static volatile int width;
+	private static volatile int height;
+	private static volatile int fontSize;
+	private static volatile List<String> fsList;
+	private static volatile String wfsPath;
 
 	// non-instantiable
 	private CommandLineParser () {}

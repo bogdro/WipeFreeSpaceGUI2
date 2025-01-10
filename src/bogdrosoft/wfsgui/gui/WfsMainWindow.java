@@ -45,20 +45,6 @@ import javax.swing.UIManager;
  */
 public class WfsMainWindow extends javax.swing.JFrame
 {
-	private JFileChooser fsChooser;
-	private JFileChooser cfgFC;
-	private JFileChooser progFC;
-
-	private volatile transient Process wfs = null;
-	private volatile transient ProgressUpdater stdoutUpdater;
-	private volatile transient ProgressUpdater stderrUpdater;
-	private volatile transient SwingWorker<Void, Void> wfs_monitor = null;
-
-	/** Current version number as a String. */
-	public static final String WFSGUI_VERSION =
-		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
-		.getString("VER");	// NOI18N
-
 	private static final Color GREEN_LABEL_COLOR = new Color (0, 204, 0);
 	// i18n stuff:
 	private static final ResourceBundle MAIN_BUNDLE =
@@ -74,6 +60,20 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private static final String NOTHING_TO_WIPE = MAIN_BUNDLE.getString("NOTHING_TO_WIPE");
 	private static final String FILE_EXISTS_OVERWRITE = MAIN_BUNDLE.getString("exists_Overwrite");
 	private static final String FILE_NOT_WRITABLE = MAIN_BUNDLE.getString("Cant_write_to_file");
+
+	/** Current version number as a String. */
+	public static final String WFSGUI_VERSION =
+		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
+		.getString("VER");	// NOI18N
+
+	private JFileChooser fsChooser;
+	private JFileChooser cfgFC;
+	private JFileChooser progFC;
+
+	private volatile transient Process wfs = null;
+	private volatile transient ProgressUpdater stdoutUpdater;
+	private volatile transient ProgressUpdater stderrUpdater;
+	private volatile transient SwingWorker<Void, Void> wfs_monitor = null;
 
 	/**
 	 * Creates new form WfsMainWindow.
