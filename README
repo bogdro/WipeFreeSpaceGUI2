@@ -71,10 +71,10 @@ Compiling using "ant" from NetBeans (you may need to provide the full
 
 Compiling by hand :
 	- on Un*x shells try:
-		cd WipeFreeSpaceGUI2/src/BogDroSoft/wfsgui/
+		cd WipeFreeSpaceGUI2/src/bogdrosoft/wfsgui/
 		javac *.java
 	- on MS Windows this could work:
-		cd WipeFreeSpaceGUI2\src\BogDroSoft\wfsgui
+		cd WipeFreeSpaceGUI2\src\bogdrosoft\wfsgui
 		javac *.java
 
 ========================= Usage (GUI)
@@ -129,7 +129,7 @@ The following method names (case-insensitive) are available in
 ========================= Translating
 
 To translate the program to your language, make a copy of each *.properties
- file in the src/BogDroSoft/wfsgui/i18n/ directory. Rename these files so
+ file in the src/bogdrosoft/wfsgui/i18n/ directory. Rename these files so
  they end with your language and country code, for example:
 	WfsMainWindow_en_GB.properties
 	AboutBox_de_DE.properties

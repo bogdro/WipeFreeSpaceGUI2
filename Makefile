@@ -74,7 +74,7 @@ SVG2PNG		= inkscape
 
 # WipeFreeSpaceGUI2 version - from a "properties" file, also used from Java
 #VER		= X.X
-include src/BogDroSoft/wfsgui/rsrc/version.properties
+include src/bogdrosoft/wfsgui/rsrc/version.properties
 
 SED_FIX_POM_VERSION = 's|<version>[^<]*</version>\s*<!--\s*WFSGUI2_VERSION\s*-->|<version>$(VER)</version> <!-- WFSGUI2_VERSION -->|'
 
@@ -85,7 +85,7 @@ FILE_ARCH_JAVADOC = $(NAME)-$(VER)-javadoc.$(PACK_EXT)
 FILE_PROGRAM = dist/$(NAME).jar
 FILE_PROGRAM_SIGNED = dist/$(NAME)-signed.jar
 
-FILE_ANY_SOURCE_FILE = src/BogDroSoft/wfsgui/Starter.java
+FILE_ANY_SOURCE_FILE = src/bogdrosoft/wfsgui/Starter.java
 
 DIR_TMP_DIST = $(NAME)-$(VER)
 
@@ -197,10 +197,10 @@ $(FILE_PROGRAM_SIGNED): jar Makefile
 # Icons
 ###########################################################################
 
-# icons: src/BogDroSoft/wfsgui/rsrc/*.png
+# icons: src/bogdrosoft/wfsgui/rsrc/*.png
 # Generate the icons for each SVG file found. This way we generate also the
 # missing PNG files and not just the ones that exist but are older.
-SVG_ICONS = $(shell $(LS) src/BogDroSoft/wfsgui/rsrc/*.svg)
+SVG_ICONS = $(shell $(LS) src/bogdrosoft/wfsgui/rsrc/*.svg)
 PNG_ICONS = $(SVG_ICONS:%.svg=%.png)
 
 icons:	$(PNG_ICONS)
