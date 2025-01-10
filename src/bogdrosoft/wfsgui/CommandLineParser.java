@@ -120,7 +120,7 @@ public class CommandLineParser
 	 * Gets the current "is maximized" property value.
 	 * @return the current "is maximized" property value.
 	 */
-	public synchronized static boolean isMax ()
+	public static synchronized boolean isMax ()
 	{
 		return isMax;
 	}
@@ -129,7 +129,7 @@ public class CommandLineParser
 	 * Gets the current "onlyZeros" property value.
 	 * @return the current "onlyZeros" property value.
 	 */
-	public synchronized static boolean isOnlyZeros ()
+	public static synchronized boolean isOnlyZeros ()
 	{
 		return onlyZeros;
 	}
@@ -138,7 +138,7 @@ public class CommandLineParser
 	 * Gets the current "is superOff selected" property value.
 	 * @return the current "is superOff selected" property value.
 	 */
-	public synchronized static boolean isSuperOff ()
+	public static synchronized boolean isSuperOff ()
 	{
 		return superOff;
 	}
@@ -147,7 +147,7 @@ public class CommandLineParser
 	 * Gets the current "superblock offset" property value.
 	 * @return the current "superblock offset" property value.
 	 */
-	public synchronized static String getSuperOffValue ()
+	public static synchronized String getSuperOffValue ()
 	{
 		return superOffValue;
 	}
@@ -156,7 +156,7 @@ public class CommandLineParser
 	 * Gets the current "is blkSize selected" property value.
 	 * @return the current "is blkSize selected" property value.
 	 */
-	public synchronized static boolean isBlkSize ()
+	public static synchronized boolean isBlkSize ()
 	{
 		return blkSize;
 	}
@@ -165,7 +165,7 @@ public class CommandLineParser
 	 * Gets the current "blocksize" property value.
 	 * @return the current "blocksize" property value.
 	 */
-	public synchronized static String getBlkSizeValue ()
+	public static synchronized String getBlkSizeValue ()
 	{
 		return blkSizeValue;
 	}
@@ -174,7 +174,7 @@ public class CommandLineParser
 	 * Gets the current "is force" property value.
 	 * @return the current "is force" property value.
 	 */
-	public synchronized static boolean isForce ()
+	public static synchronized boolean isForce ()
 	{
 		return force;
 	}
@@ -183,7 +183,7 @@ public class CommandLineParser
 	 * Gets the current "is lastZero" property value.
 	 * @return the current "is lastZero" property value.
 	 */
-	public synchronized static boolean islastZero ()
+	public static synchronized boolean islastZero ()
 	{
 		return lastZero;
 	}
@@ -192,7 +192,7 @@ public class CommandLineParser
 	 * Gets the current "is method selected" property value.
 	 * @return the current "is method selected" property value.
 	 */
-	public synchronized static boolean isMethod ()
+	public static synchronized boolean isMethod ()
 	{
 		return method;
 	}
@@ -201,7 +201,7 @@ public class CommandLineParser
 	 * Gets the current "methodName" property value.
 	 * @return the current "methodName" property value.
 	 */
-	public synchronized static String getMethodName ()
+	public static synchronized String getMethodName ()
 	{
 		return methodName;
 	}
@@ -210,7 +210,7 @@ public class CommandLineParser
 	 * Gets the current "is iter selected" property value.
 	 * @return the current "is iter selected" property value.
 	 */
-	public synchronized static boolean isIter ()
+	public static synchronized boolean isIter ()
 	{
 		return iter;
 	}
@@ -219,7 +219,7 @@ public class CommandLineParser
 	 * Gets the current "iterationsValue" property value.
 	 * @return the current "iterationsValue" property value.
 	 */
-	public synchronized static String getIterationsValue ()
+	public static synchronized String getIterationsValue ()
 	{
 		return iterationsValue;
 	}
@@ -228,7 +228,7 @@ public class CommandLineParser
 	 * Gets the current "is nopart" property value.
 	 * @return the current "is nopart" property value.
 	 */
-	public synchronized static boolean isNopart ()
+	public static synchronized boolean isNopart ()
 	{
 		return nopart;
 	}
@@ -237,7 +237,7 @@ public class CommandLineParser
 	 * Gets the current "is nounrm" property value.
 	 * @return the current "is nounrm" property value.
 	 */
-	public synchronized static boolean isNounrm ()
+	public static synchronized boolean isNounrm ()
 	{
 		return nounrm;
 	}
@@ -246,7 +246,7 @@ public class CommandLineParser
 	 * Gets the current "is nowfs" property value.
 	 * @return the current "is nowfs" property value.
 	 */
-	public synchronized static boolean isNowfs ()
+	public static synchronized boolean isNowfs ()
 	{
 		return nowfs;
 	}
@@ -255,7 +255,7 @@ public class CommandLineParser
 	 * Gets the current "is ioctl" property value.
 	 * @return the current "is ioctl" property value.
 	 */
-	public synchronized static boolean isIoctl ()
+	public static synchronized boolean isIoctl ()
 	{
 		return ioctl;
 	}
@@ -264,7 +264,7 @@ public class CommandLineParser
 	 * Gets the current "is noWipeZeroBlocks" property value.
 	 * @return the current "is noWipeZeroBlocks" property value.
 	 */
-	public synchronized static boolean isNoWipeZeroBlocks ()
+	public static synchronized boolean isNoWipeZeroBlocks ()
 	{
 		return noWipeZeroBlocks;
 	}
@@ -273,7 +273,7 @@ public class CommandLineParser
 	 * Gets the current "is useDedicated" property value.
 	 * @return the current "is useDedicated" property value.
 	 */
-	public synchronized static boolean isUseDedicated ()
+	public static synchronized boolean isUseDedicated ()
 	{
 		return useDedicated;
 	}
@@ -282,7 +282,7 @@ public class CommandLineParser
 	 * Gets the current "is wiping order selected" property value.
 	 * @return the current "is wiping order selected" property value.
 	 */
-	public synchronized static boolean isOrder ()
+	public static synchronized boolean isOrder ()
 	{
 		return isOrder;
 	}
@@ -291,7 +291,7 @@ public class CommandLineParser
 	 * Gets the current "wipingOrder" property value.
 	 * @return the current "wipingOrder" property value.
 	 */
-	public synchronized static String getWipingOrder ()
+	public static synchronized String getWipingOrder ()
 	{
 		return wipingOrder;
 	}
@@ -300,7 +300,7 @@ public class CommandLineParser
 	 * Gets the current X coordinate.
 	 * @return the current X coordinate.
 	 */
-	public synchronized static int getX ()
+	public static synchronized int getX ()
 	{
 		return x;
 	}
@@ -309,7 +309,7 @@ public class CommandLineParser
 	 * Gets the current Y coordinate.
 	 * @return the current Y coordinate.
 	 */
-	public synchronized static int getY ()
+	public static synchronized int getY ()
 	{
 		return y;
 	}
@@ -318,7 +318,7 @@ public class CommandLineParser
 	 * Gets the current width.
 	 * @return the current width.
 	 */
-	public synchronized static int getWidth ()
+	public static synchronized int getWidth ()
 	{
 		return width;
 	}
@@ -327,7 +327,7 @@ public class CommandLineParser
 	 * Gets the current height.
 	 * @return the current height.
 	 */
-	public synchronized static int getHeight ()
+	public static synchronized int getHeight ()
 	{
 		return height;
 	}
@@ -336,7 +336,7 @@ public class CommandLineParser
 	 * Gets the current fontSize.
 	 * @return the current fontSize.
 	 */
-	public synchronized static int getFontSize ()
+	public static synchronized int getFontSize ()
 	{
 		return fontSize;
 	}
@@ -345,7 +345,7 @@ public class CommandLineParser
 	 * Gets the current filesystem list.
 	 * @return the current filesystem list.
 	 */
-	public synchronized static List<String> getFsList ()
+	public static synchronized List<String> getFsList ()
 	{
 		return fsList;
 	}
@@ -353,7 +353,7 @@ public class CommandLineParser
 	 * Gets the current "wfsPath" property value.
 	 * @return the current "wfsPath" property value.
 	 */
-	public synchronized static String getWfsPath ()
+	public static synchronized String getWfsPath ()
 	{
 		return wfsPath;
 	}
@@ -362,7 +362,7 @@ public class CommandLineParser
 	 * Reads the configuration from the given file and sets fields.
 	 * @param f The file to read the config from.
 	 */
-	private synchronized static void readConfig (File f)
+	private static synchronized void readConfig (File f)
 	{
 		if ( f == null )
 		{
@@ -416,7 +416,7 @@ public class CommandLineParser
 	 * Parses the given command line and performs actions based on it.
 	 * @param args The command line to parse.
 	 */
-	public synchronized static void parse (String[] args)
+	public static synchronized void parse (String[] args)
 	{
 		if ( args == null )
 		{

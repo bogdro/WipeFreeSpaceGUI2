@@ -216,7 +216,7 @@ public class Utils
 	 * @param ex The exception to display.
 	 * @param data Any additional data to display.
 	 */
-	public synchronized static void handleException (Throwable ex, Object data)
+	public static synchronized void handleException (Throwable ex, Object data)
 	{
 		if ( ex == null || (System.out == null && System.err == null) )
 		{
