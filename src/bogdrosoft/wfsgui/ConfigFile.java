@@ -23,6 +23,7 @@ package bogdrosoft.wfsgui;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -153,30 +154,6 @@ public class ConfigFile
 		height = 600;
 		isMax = false;
 		fontSize = 12;
-		Matcher allzeroM;
-		Matcher superM;
-		Matcher bsizeM;
-		Matcher forceM;
-		Matcher iterM;
-		Matcher lastzeroM;
-		Matcher nopartM;
-		Matcher nounrmM;
-		Matcher nowfsM;
-		Matcher ioctlM;
-		Matcher fsListM;
-		Matcher xM;
-		Matcher yM;
-		Matcher widthM;
-		Matcher heightM;
-		Matcher isMaxM;
-		Matcher fontSizeM;
-		Matcher wfsPathM;
-		Matcher isMethodM;
-		Matcher methodNameM;
-		Matcher noWipeZeroM;
-		Matcher useDedicatedM;
-		Matcher isOrderM;
-		Matcher orderM;
 
 		BufferedReader br = null;
 		try
@@ -190,7 +167,7 @@ public class ConfigFile
 				{
 					line = br.readLine ();
 				}
-				catch (Exception ex)
+				catch (IOException ex)
 				{
 					break;
 				}
@@ -208,140 +185,70 @@ public class ConfigFile
 					continue;
 				}
 
-				allzeroM = ALL_ZERO_PATTERN.matcher (line);
-				superM = SUPERBLOCK_PATTERN.matcher (line);
-				bsizeM = BLOCKSIZE_PATTERN.matcher (line);
-				forceM = FORCE_WIPE_PATTERN.matcher (line);
-				iterM = ITERATIONS_PATTERN.matcher (line);
-				lastzeroM = LAST_ZERO_PATTERN.matcher (line);
-				nopartM = NOPART_PATTERN.matcher (line);
-				nounrmM = NOUNRM_PATTERN.matcher (line);
-				nowfsM = NOWFS_PATTERN.matcher (line);
-				ioctlM = IOCTL_PATTERN.matcher (line);
-				fsListM = FS_LIST_PATTERN.matcher (line);
-				xM = X_PATTERN.matcher (line);
-				yM = Y_PATTERN.matcher (line);
-				widthM = WIDTH_PATTERN.matcher (line);
-				heightM = HEIGHT_PATTERN.matcher (line);
-				isMaxM = IS_MAX_PATTERN.matcher (line);
-				fontSizeM = FONT_SIZE_PATTERN.matcher (line);
-				wfsPathM = PATH_TO_WFS_PATTERN.matcher (line);
-				isMethodM = IS_METHOD_CHOSEN_PATTERN.matcher (line);
-				methodNameM = METHOD_NAME_PATTERN.matcher (line);
-				noWipeZeroM = NO_WIPE_ZERO_PATTERN.matcher (line);
-				useDedicatedM = USE_DEDICATED_PATTERN.matcher (line);
-				isOrderM = IS_WIPING_ORDER_CHOSEN_PATTERN.matcher(line);
-				orderM = WIPING_ORDER_PATTERN.matcher(line);
+				Matcher allzeroM = ALL_ZERO_PATTERN.matcher (line);
+				Matcher superM = SUPERBLOCK_PATTERN.matcher (line);
+				Matcher bsizeM = BLOCKSIZE_PATTERN.matcher (line);
+				Matcher forceM = FORCE_WIPE_PATTERN.matcher (line);
+				Matcher iterM = ITERATIONS_PATTERN.matcher (line);
+				Matcher lastzeroM = LAST_ZERO_PATTERN.matcher (line);
+				Matcher nopartM = NOPART_PATTERN.matcher (line);
+				Matcher nounrmM = NOUNRM_PATTERN.matcher (line);
+				Matcher nowfsM = NOWFS_PATTERN.matcher (line);
+				Matcher ioctlM = IOCTL_PATTERN.matcher (line);
+				Matcher fsListM = FS_LIST_PATTERN.matcher (line);
+				Matcher xM = X_PATTERN.matcher (line);
+				Matcher yM = Y_PATTERN.matcher (line);
+				Matcher widthM = WIDTH_PATTERN.matcher (line);
+				Matcher heightM = HEIGHT_PATTERN.matcher (line);
+				Matcher isMaxM = IS_MAX_PATTERN.matcher (line);
+				Matcher fontSizeM = FONT_SIZE_PATTERN.matcher (line);
+				Matcher wfsPathM = PATH_TO_WFS_PATTERN.matcher (line);
+				Matcher isMethodM = IS_METHOD_CHOSEN_PATTERN.matcher (line);
+				Matcher methodNameM = METHOD_NAME_PATTERN.matcher (line);
+				Matcher noWipeZeroM = NO_WIPE_ZERO_PATTERN.matcher (line);
+				Matcher useDedicatedM = USE_DEDICATED_PATTERN.matcher (line);
+				Matcher isOrderM = IS_WIPING_ORDER_CHOSEN_PATTERN.matcher(line);
+				Matcher orderM = WIPING_ORDER_PATTERN.matcher(line);
 
 				if ( allzeroM.matches () )
 				{
-					try
-					{
-						allzeros = Integer.parseInt (allzeroM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (all_zero)");	// NOI18N
-					}
+					allzeros = readIntUsingMatcher (allzeroM, 1, "all_zero") != 0;	// NOI18N
 				}
 				else if ( superM.matches () )
 				{
-					try
-					{
-						superOffset = Integer.parseInt (superM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (super_off)");	// NOI18N
-					}
+					superOffset = readIntUsingMatcher (superM, 1, "super_off");	// NOI18N
 				}
 				else if ( bsizeM.matches () )
 				{
-					try
-					{
-						blockSize = Integer.parseInt (bsizeM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (block_size)");	// NOI18N
-					}
+					blockSize = readIntUsingMatcher (bsizeM, 1, "block_size");	// NOI18N
 				}
 				else if ( forceM.matches () )
 				{
-					try
-					{
-						force = Integer.parseInt (forceM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (force)");	// NOI18N
-					}
+					force = readIntUsingMatcher (forceM, 1, "force") != 0;	// NOI18N
 				}
 				else if ( iterM.matches () )
 				{
-					try
-					{
-						iterations = Integer.parseInt (iterM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (interations)"); // NOI18N
-					}
+					iterations = readIntUsingMatcher (iterM, 1, "interations");	// NOI18N
 				}
 				else if ( lastzeroM.matches () )
 				{
-					try
-					{
-						lastZero = Integer.parseInt (lastzeroM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (last_zero)");	// NOI18N
-					}
+					lastZero = readIntUsingMatcher (lastzeroM, 1, "last_zero") != 0;	// NOI18N
 				}
 				else if ( nopartM.matches () )
 				{
-					try
-					{
-						nopart = Integer.parseInt (nopartM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (no_part)");	// NOI18N
-					}
+					nopart = readIntUsingMatcher (nopartM, 1, "no_part") != 0;	// NOI18N
 				}
 				else if ( nounrmM.matches () )
 				{
-					try
-					{
-						nounrm = Integer.parseInt (nounrmM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (no_unrm)");	// NOI18N
-					}
+					nounrm = readIntUsingMatcher (nounrmM, 1, "no_unrm") != 0;	// NOI18N
 				}
 				else if ( nowfsM.matches () )
 				{
-					try
-					{
-						nowfs = Integer.parseInt (nowfsM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (no_wfs)");	// NOI18N
-					}
+					nowfs = readIntUsingMatcher (nowfsM, 1, "no_wfs") != 0;	// NOI18N
 				}
 				else if ( ioctlM.matches () )
 				{
-					try
-					{
-						ioctl = Integer.parseInt (ioctlM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (ioctl)");	// NOI18N
-					}
+					ioctl = readIntUsingMatcher (ioctlM, 1, "ioctl") != 0;	// NOI18N
 				}
 				else if ( fsListM.matches () )
 				{
@@ -371,69 +278,27 @@ public class ConfigFile
 				}
 				else if ( xM.matches () )
 				{
-					try
-					{
-						x = Integer.parseInt (xM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (x)");	// NOI18N
-					}
+					x = readIntUsingMatcher (xM, 1, "x");	// NOI18N
 				}
 				else if ( yM.matches () )
 				{
-					try
-					{
-						y = Integer.parseInt (yM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (y)");	// NOI18N
-					}
+					y = readIntUsingMatcher (yM, 1, "y");	// NOI18N
 				}
 				else if ( widthM.matches () )
 				{
-					try
-					{
-						width = Integer.parseInt (widthM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (width)");	// NOI18N
-					}
+					width = readIntUsingMatcher (widthM, 1, "width");	// NOI18N
 				}
 				else if ( heightM.matches () )
 				{
-					try
-					{
-						height = Integer.parseInt (heightM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (height)");	// NOI18N
-					}
+					height = readIntUsingMatcher (heightM, 1, "height");	// NOI18N
 				}
 				else if ( isMaxM.matches () )
 				{
-					try
-					{
-						isMax = Integer.parseInt (isMaxM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (is_max)");	// NOI18N
-					}
+					isMax = readIntUsingMatcher (isMaxM, 1, "is_max") != 0;	// NOI18N
 				}
 				else if ( fontSizeM.matches () )
 				{
-					try
-					{
-						fontSize = Integer.parseInt (fontSizeM.group (1));
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (font_size)");	// NOI18N
-					}
+					fontSize = readIntUsingMatcher (fontSizeM, 1, "font_size");	// NOI18N
 				}
 				else if ( wfsPathM.matches () )
 				{
@@ -441,14 +306,7 @@ public class ConfigFile
 				}
 				else if ( isMethodM.matches () )
 				{
-					try
-					{
-						selectMethod = Integer.parseInt (isMethodM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (is_method)");	// NOI18N
-					}
+					selectMethod = readIntUsingMatcher (isMethodM, 1, "is_method") != 0;	// NOI18N
 				}
 				else if ( methodNameM.matches () )
 				{
@@ -456,36 +314,15 @@ public class ConfigFile
 				}
 				else if ( noWipeZeroM.matches () )
 				{
-					try
-					{
-						noWipeZeroBlocks = Integer.parseInt (noWipeZeroM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (no_wipe_zero_blocks)");	// NOI18N
-					}
+					noWipeZeroBlocks = readIntUsingMatcher (noWipeZeroM, 1, "no_wipe_zero_blocks") != 0;	// NOI18N
 				}
 				else if ( useDedicatedM.matches () )
 				{
-					try
-					{
-						useDedicated = Integer.parseInt (useDedicatedM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (use_dedicated)");	// NOI18N
-					}
+					useDedicated = readIntUsingMatcher (useDedicatedM, 1, "use_dedicated") != 0;	// NOI18N
 				}
 				else if ( isOrderM.matches () )
 				{
-					try
-					{
-						selectOrder = Integer.parseInt (isOrderM.group (1)) != 0;
-					}
-					catch (Exception ex)
-					{
-						Utils.handleException (ex, "ConfigFile.read.parseInt (is_order)");	// NOI18N
-					}
+					selectOrder = readIntUsingMatcher (isOrderM, 1, "is_order") != 0;	// NOI18N
 				}
 				else if ( orderM.matches () )
 				{
@@ -494,7 +331,7 @@ public class ConfigFile
 			} while (true);
 			br.close ();
 		}
-		catch (Exception ex)
+		catch (IOException ex)
 		{
 			if (br != null)
 			{
@@ -502,7 +339,7 @@ public class ConfigFile
 				{
 					br.close();
 				}
-				catch (Exception ex2)
+				catch (IOException ex2)
 				{
 					Utils.handleException(ex, "ConfigFile.read->exception");
 				}
@@ -578,7 +415,7 @@ public class ConfigFile
 			pw.println ("order = " + wipingOrder);					// NOI18N
 			pw.close ();
 		}
-		catch (Exception ex)
+		catch (IOException ex)
 		{
 			if (pw != null)
 			{
@@ -1029,5 +866,18 @@ public class ConfigFile
 	public String getWipingOrder ()
 	{
 		return wipingOrder;
+	}
+
+	private int readIntUsingMatcher(Matcher m, int group, String field)
+	{
+		try
+		{
+			return Integer.parseInt (m.group (group));
+		}
+		catch (NumberFormatException ex)
+		{
+			Utils.handleException (ex, "ConfigFile.read.parseInt (" + field + ")");	// NOI18N
+			return -1;
+		}
 	}
 }
