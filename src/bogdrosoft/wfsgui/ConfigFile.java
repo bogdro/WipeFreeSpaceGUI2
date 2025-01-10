@@ -329,9 +329,12 @@ public class ConfigFile
 					wipingOrder = orderM.group (1);
 				}
 			} while (true);
-			br.close ();
 		}
 		catch (IOException ex)
+		{
+			Utils.handleException(ex, "ConfigFile.read");
+		}
+		finally
 		{
 			if (br != null)
 			{
@@ -341,10 +344,9 @@ public class ConfigFile
 				}
 				catch (IOException ex2)
 				{
-					Utils.handleException(ex, "ConfigFile.read->exception");
+					Utils.handleException(ex2, "ConfigFile.read->exception");
 				}
 			}
-			Utils.handleException(ex, "ConfigFile.read");
 		}
 
 		// verify here
@@ -413,9 +415,12 @@ public class ConfigFile
 			pw.println ("use_dedicated = " + String.valueOf ((useDedicated)? 1 : 0));		// NOI18N
 			pw.println ("is_order = " + String.valueOf ((selectOrder)? 1 : 0));	// NOI18N
 			pw.println ("order = " + wipingOrder);					// NOI18N
-			pw.close ();
 		}
 		catch (IOException ex)
+		{
+			Utils.handleException(ex, "ConfigFile.write");
+		}
+		finally
 		{
 			if (pw != null)
 			{
@@ -423,12 +428,11 @@ public class ConfigFile
 				{
 					pw.close();
 				}
-				catch (Exception ex2)
+				catch (Exception e)
 				{
-					Utils.handleException(ex, "ConfigFile.write->exception");
+					Utils.handleException(e, "ConfigFile.write->exception");
 				}
 			}
-			Utils.handleException(ex, "ConfigFile.write");
 		}
 	}
 
