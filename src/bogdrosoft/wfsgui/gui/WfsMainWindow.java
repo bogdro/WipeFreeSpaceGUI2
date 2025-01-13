@@ -81,29 +81,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private WfsMainWindow()
 	{
 		// set uncaught exception handler for GUI threads, just in case:
-		try
-		{
-			Thread[] ths = new Thread[Thread.activeCount () * 5];
-			if ( ths != null )
-			{
-				final int nThreads = Thread.enumerate (ths);
-				for ( int i=0; i < nThreads; i++ )
-				{
-					String name = ths[i].getName ();
-					if ( name == null )
-					{
-						continue;
-					}
-					if ( name.contains ("AWT") // NOI18N
-						|| name.contains ("Swing") // NOI18N
-						|| name.contains ("Image") // NOI18N
-					   )
-					{
-						ths[i].setUncaughtExceptionHandler (Utils.HANDLER);
-					}
-				}
-			}
-		} catch (Throwable th) {}
+		Utils.UncExHndlr.setHandlerForGuiThreads(this);
 
 		initComponents();
 

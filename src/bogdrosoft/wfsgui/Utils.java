@@ -398,6 +398,35 @@ public class Utils
 			} catch (Throwable th) {}
 		}
 
+		public static void setHandlerForGuiThreads(Component c)
+		{
+			try
+			{
+				Thread[] ths = new Thread[Thread.activeCount () * 5];
+				final int nThreads = Thread.enumerate (ths);
+				for ( int i=0; i < nThreads; i++ )
+				{
+					String name = ths[i].getName ();
+					if ( name == null )
+					{
+						continue;
+					}
+					if ( name.contains ("AWT") // NOI18N
+						|| name.contains ("Swing") // NOI18N
+						|| name.contains ("Image") // NOI18N
+						)
+					{
+						ths[i].setUncaughtExceptionHandler (
+							new Utils.UncExHndlr (c));
+					}
+				}
+			}
+			catch (Throwable th)
+			{
+				// don't care for exceptions, this is optional
+			}
+		}
+
 		@Override
 		public String toString ()
 		{
