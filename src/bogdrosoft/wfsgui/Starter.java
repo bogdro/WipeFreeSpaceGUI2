@@ -53,7 +53,7 @@ public class Starter
 		logFile = redirectStderrToFile (logFile);
 
 		// set default uncaught exception handler:
-		Thread.setDefaultUncaughtExceptionHandler (Utils.handler);
+		Thread.setDefaultUncaughtExceptionHandler (Utils.HANDLER);
 
 		try
 		{

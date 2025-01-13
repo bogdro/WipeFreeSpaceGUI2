@@ -32,7 +32,7 @@ public class Utils
 	/**
 	 * A sample uncaught-exception handler instance for threads.
 	 */
-	public static final UncExHndlr handler = new UncExHndlr ();
+	public static final UncExHndlr HANDLER = new UncExHndlr ();
 
 	/** An empty String. */
 	public static final String EMPTY_STR = "";	// NOI18N

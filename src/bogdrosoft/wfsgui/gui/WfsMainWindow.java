@@ -99,7 +99,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 						|| name.contains ("Image") // NOI18N
 					   )
 					{
-						ths[i].setUncaughtExceptionHandler (Utils.handler);
+						ths[i].setUncaughtExceptionHandler (Utils.HANDLER);
 					}
 				}
 			}
