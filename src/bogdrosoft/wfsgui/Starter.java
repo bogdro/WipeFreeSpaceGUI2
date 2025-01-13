@@ -120,7 +120,11 @@ public class Starter
 			try
 			{
 				dirSep = System.getProperty ("file.separator", "/");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read file.separator"); // NOI18N
+			}
 			if ( dirSep == null )
 			{
 				dirSep = File.separator;
@@ -133,31 +137,59 @@ public class Starter
 			try
 			{
 				dirs[0] = System.getProperty ("user.dir");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read user.dir"); // NOI18N
+			}
 			try
 			{
 				dirs[1] = System.getProperty ("user.home");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read user.home"); // NOI18N
+			}
 			try
 			{
 				dirs[2] = System.getenv ("HOME");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read HOME"); // NOI18N
+			}
 			try
 			{
 				dirs[3] = System.getenv ("TMP");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read TMP"); // NOI18N
+			}
 			try
 			{
 				dirs[4] = System.getenv ("TEMP");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read TEMP"); // NOI18N
+			}
 			try
 			{
 				dirs[5] = System.getenv ("TMPDIR");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read TMPDIR"); // NOI18N
+			}
 			try
 			{
 				dirs[6] = System.getenv ("TEMPDIR");	// NOI18N
-			} catch (Exception e) {}
+			}
+			catch (Exception e)
+			{
+				Utils.handleException (ex, "Cannot read TEMPDIR"); // NOI18N
+			}
 			int i;
 			for ( i = 0; i < dirs.length; i++ )
 			{
