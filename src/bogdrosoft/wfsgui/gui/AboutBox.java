@@ -35,7 +35,7 @@ public class AboutBox extends javax.swing.JDialog
 {
 	private static final String EMAIL_ADDR = "bogdro@users.sourceforge.net";	// NOI18N
 	private static final String WWW_ADDR1 = "https://wipefreespace.sourceforge.io/";		// NOI18N
-	private static final String WWW_ADDR2 = "http://bogdro.users.sourceforge.net/";	// NOI18N
+	private static final String WWW_ADDR2 = "https://bogdro.users.sourceforge.net/";	// NOI18N
 	private static final URI URI_MAILTO =
 		createURI("mailto", EMAIL_ADDR + "?subject=[SOFT] - WipeFreeSpaceGUI2");		// NOI18N
 	private static final URI URI_WWW1 = createWebURI(WWW_ADDR1);
