@@ -37,7 +37,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="mainScrollPane" alignment="0" pref="586" max="32767" attributes="0"/>
+          <Component id="mainScrollPane" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -54,125 +54,117 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Component id="fsProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="stageProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="totalProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fsProgressBar" linkSize="3" pref="500" max="32767" attributes="0"/>
+                                  <Component id="stageProgressBar" linkSize="3" max="32767" attributes="0"/>
+                                  <Component id="totalProgressBar" linkSize="3" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="fsProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="stageProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="totalProgressLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fsListScrollPane" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="addFsBut" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="delFsBut" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="fsListLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="fsProgressBar" linkSize="3" pref="500" max="32767" attributes="0"/>
-                                          <Component id="stageProgressBar" linkSize="3" max="32767" attributes="0"/>
-                                          <Component id="totalProgressBar" linkSize="3" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="wipingOptsLabel" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="fsListScrollPane" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="addFsBut" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="delFsBut" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="fsListLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="wipingOptsLabel" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="pathToWfsLabel" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="pathToWfsTextField" min="-2" pref="243" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="wfsBrowseButton" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="optAllZerosCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="optSuperblockCheckBox" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="superblockTextField" min="-2" pref="70" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="optBlocksizeCheckBox" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="blocksizeTextField" min="-2" pref="70" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="optForceCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="optIterCheckBox" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="iterationsTextField" min="-2" pref="70" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="optLastZeroCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="optMethodCheckBox" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="wipingMethodComboBox" min="-2" pref="130" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="optOrderCheckBox" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                                              <Component id="wipingOrderComboBox" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="optNoPartCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="optNoUnrmCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="optNoWfsCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="optIoctlCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="optNoWipeZeroBlkCheckBox" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="optUseDedicatedCheckBox" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="pathToWfsLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="pathToWfsTextField" min="-2" pref="243" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="wfsBrowseButton" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="nowWipingDescLabel" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="nowWipingNameLabel" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="aboutButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="exitButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="fontSizeLabel" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="fontSizeSpinner" min="-2" pref="60" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="optAllZerosCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="optSuperblockCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="superblockTextField" min="-2" pref="70" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="optBlocksizeCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="blocksizeTextField" min="-2" pref="70" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="optForceCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="optIterCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="iterationsTextField" min="-2" pref="70" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="optLastZeroCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="optMethodCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="wipingMethodComboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <Component id="startButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="stopButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="loadConfButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="saveButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="optOrderCheckBox" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                                      <Component id="wipingOrderComboBox" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="optNoPartCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="optNoUnrmCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="optNoWfsCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="optIoctlCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="optNoWipeZeroBlkCheckBox" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="optUseDedicatedCheckBox" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="nowWipingDescLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="nowWipingNameLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="17" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="wfsOutputLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="aboutButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="exitButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="fontSizeLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="fontSizeSpinner" min="-2" pref="60" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="startButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="stopButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="loadConfButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saveButton" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="wfsOutputScrollPane" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="wfsOutputLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="wfsOutputScrollPane" min="-2" pref="704" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="wfsErrorsScrollPane" min="-2" pref="350" max="-2" attributes="0"/>
                                   <Component id="wfsErrorsLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
