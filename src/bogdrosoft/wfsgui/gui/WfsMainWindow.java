@@ -1215,6 +1215,10 @@ public class WfsMainWindow extends javax.swing.JFrame
 		superblockTextField.setEnabled (false);
 		optNoWipeZeroBlkCheckBox.setEnabled (false);
 		optUseDedicatedCheckBox.setEnabled (false);
+		optMethodCheckBox.setEnabled (false);
+		wipingMethodComboBox.setEnabled (false);
+		pathToWfsTextField.setEnabled (false);
+		wfsBrowseButton.setEnabled (false);
 		optOrderCheckBox.setEnabled (false);
 		wipingOrderComboBox.setEnabled (false);
         }//GEN-LAST:event_startButtonActionPerformed
@@ -1249,6 +1253,13 @@ public class WfsMainWindow extends javax.swing.JFrame
 		optNoWipeZeroBlkCheckBox.setEnabled (true);
 		optUseDedicatedCheckBox.setEnabled (true);
 		optOrderCheckBox.setEnabled (true);
+		optMethodCheckBox.setEnabled (true);
+		if ( optMethodCheckBox.isSelected() )
+		{
+			wipingMethodComboBox.setEnabled (true);
+		}
+		pathToWfsTextField.setEnabled (true);
+		wfsBrowseButton.setEnabled (true);
 		if ( optBlocksizeCheckBox.isSelected() )
 		{
 			blocksizeTextField.setEnabled (true);
