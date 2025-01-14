@@ -1192,6 +1192,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 				CANNOT_EXECUTE + Utils.COLON + Utils.SPACE + ex);
 			return;
 		}
+		nowWipingNameLabel.setText ("-");	// NOI18N
 		// disable the GUI elements:
 		stopButton.setEnabled (true);
 		startButton.setEnabled (false);
