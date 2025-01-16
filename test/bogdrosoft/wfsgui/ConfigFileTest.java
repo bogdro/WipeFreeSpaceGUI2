@@ -22,10 +22,7 @@ package bogdrosoft.wfsgui;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -41,26 +38,6 @@ public class ConfigFileTest
 	public void setUp () throws Exception
 	{
 		f = File.createTempFile("wfsgui2", null);
-	}
-
-	
-	public ConfigFileTest()
-	{
-	}
-	
-	@BeforeClass
-	public static void setUpClass()
-	{
-	}
-	
-	@AfterClass
-	public static void tearDownClass()
-	{
-	}
-	
-	@After
-	public void tearDown()
-	{
 	}
 
 	/**
