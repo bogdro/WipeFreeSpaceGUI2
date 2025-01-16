@@ -78,7 +78,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 	/**
 	 * Creates new form WfsMainWindow.
 	 */
-	private WfsMainWindow()
+	WfsMainWindow()
 	{
 		// set uncaught exception handler for GUI threads, just in case:
 		Utils.UncExHndlr.setHandlerForGuiThreads(this);
