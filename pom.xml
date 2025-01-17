@@ -170,6 +170,7 @@ Project homepage: https://wipefreespace.sourceforge.io
 								</goals>
 								<configuration>
 									<formats>
+										<format>HTML</format>
 										<format>XML</format>
 									</formats>
 								</configuration>
