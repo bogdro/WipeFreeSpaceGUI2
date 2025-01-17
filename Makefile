@@ -47,6 +47,8 @@ GNUPG_SIGNER	= gpgsignsoft.sh
 
 # Apache Ant (ant.apache.org)
 ANT		= ant
+# Apache Maven (maven.apache.org)
+MAVEN		= mvn
 
 # URL of a Timestamping Authority
 #TSAURL		= http://timestamp.comodoca.com
@@ -220,10 +222,13 @@ check:	test
 test:
 	$(ANT) test
 
+coverage:
+	$(MAVEN) -B verify -Pcoverage
+
 clean:	javadoc-clean jar-clean
 
 .PHONY:	all pack pack-src pack-bin pack-javadoc \
 	jar jar-clean jar-signed \
 	icons \
 	clean javadoc-clean \
-	check test
+	check test coverage
