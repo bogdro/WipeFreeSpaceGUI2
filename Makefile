@@ -1,7 +1,7 @@
 #
 # WipeFreeSpaceGUI2 hand-made Makefile for creating distribution packages.
 # Best with GNU make.
-# Copyright (C) 2022-2024 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
+# Copyright (C) 2022-2025 Bogdan 'bogdro' Drozdowski, bogdro (at) users . sourceforge . net
 #
 # Project homepage: https://wipefreespace.sourceforge.io
 #
