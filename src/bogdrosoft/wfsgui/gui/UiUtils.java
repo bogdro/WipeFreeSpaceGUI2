@@ -24,6 +24,7 @@ import bogdrosoft.wfsgui.Utils;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Frame;
 import java.awt.GraphicsConfiguration;
 import java.awt.Insets;
 import java.awt.Rectangle;
@@ -210,7 +211,7 @@ public class UiUtils
 			}
 		}
 		if ( (w instanceof JFrame)
-			&& (((JFrame)w).getExtendedState () & JFrame.MAXIMIZED_BOTH) == 0 )
+			&& (((JFrame)w).getExtendedState () & Frame.MAXIMIZED_BOTH) == 0 )
 		{
 			// if not maximized, verify position and size
 			if ( w.getWidth () <= 0 )

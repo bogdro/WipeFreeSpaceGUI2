@@ -24,6 +24,7 @@ import bogdrosoft.wfsgui.ConfigFile;
 import bogdrosoft.wfsgui.Starter;
 import bogdrosoft.wfsgui.Utils;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -166,11 +167,11 @@ public class WfsMainWindow extends javax.swing.JFrame
 		pathToWfsTextField.setText(CommandLineParser.getWfsPath());
 		if ( CommandLineParser.isMax() )
 		{
-			setExtendedState (JFrame.MAXIMIZED_BOTH);
+			setExtendedState (Frame.MAXIMIZED_BOTH);
 		}
 		else
 		{
-			setExtendedState (getExtendedState () & ~ JFrame.MAXIMIZED_BOTH);
+			setExtendedState (getExtendedState () & ~ Frame.MAXIMIZED_BOTH);
 			if ( CommandLineParser.getX () > 0 && CommandLineParser.getY () > 0 )
 			{
 				setLocation (Math.max(0, CommandLineParser.getX ()),
@@ -1386,11 +1387,11 @@ public class WfsMainWindow extends javax.swing.JFrame
 				pathToWfsTextField.setText(cfg.getWfsPath ());
 				if ( cfg.getIsMax () )
 				{
-					setExtendedState (JFrame.MAXIMIZED_BOTH);
+					setExtendedState (Frame.MAXIMIZED_BOTH);
 				}
 				else
 				{
-					setExtendedState (getExtendedState () & ~ JFrame.MAXIMIZED_BOTH);
+					setExtendedState (getExtendedState () & ~ Frame.MAXIMIZED_BOTH);
 					setLocation (Math.max(0, cfg.getX ()),
 						Math.max(0, cfg.getY ()));
 					setSize (Math.max(0, cfg.getWidth ()),
@@ -1508,7 +1509,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 				cfg.setY (getY ());
 				cfg.setWidth (getWidth ());
 				cfg.setHeight (getHeight ());
-				cfg.setIsMaximized ((getExtendedState () & JFrame.MAXIMIZED_BOTH) != 0);
+				cfg.setIsMaximized ((getExtendedState () & Frame.MAXIMIZED_BOTH) != 0);
 				ListModel model = fsList.getModel ();
 				Vector<String> values;
 				if ( model != null )
