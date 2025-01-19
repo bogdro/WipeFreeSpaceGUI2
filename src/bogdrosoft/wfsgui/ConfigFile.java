@@ -391,29 +391,29 @@ public class ConfigFile
 					fsString.append (fsList.get (i)).append(Utils.ZERO_BYTE);
 				}
 			}
-			pw.println ("all_zero = " + String.valueOf ((allzeros)? 1 : 0));	// NOI18N
+			pw.println ("all_zero = " + ((allzeros)? 1 : 0));	// NOI18N
 			pw.println ("superblock_offset = " + superOffset);			// NOI18N
 			pw.println ("blocksize = " + blockSize);				// NOI18N
-			pw.println ("force = " + String.valueOf ((force)? 1 : 0));		// NOI18N
+			pw.println ("force = " + ((force)? 1 : 0));		// NOI18N
 			pw.println ("iterations = " + iterations);				// NOI18N
-			pw.println ("last_zero = " + String.valueOf ((lastZero)? 1 : 0));	// NOI18N
-			pw.println ("no_part = " + String.valueOf ((nopart)? 1 : 0));		// NOI18N
-			pw.println ("no_undel = " + String.valueOf ((nounrm)? 1 : 0));		// NOI18N
-			pw.println ("no_free = " + String.valueOf ((nowfs)? 1 : 0));		// NOI18N
-			pw.println ("no_cache = " + String.valueOf ((ioctl)? 1 : 0));		// NOI18N
+			pw.println ("last_zero = " + ((lastZero)? 1 : 0));	// NOI18N
+			pw.println ("no_part = " + ((nopart)? 1 : 0));		// NOI18N
+			pw.println ("no_undel = " + ((nounrm)? 1 : 0));		// NOI18N
+			pw.println ("no_free = " + ((nowfs)? 1 : 0));		// NOI18N
+			pw.println ("no_cache = " + ((ioctl)? 1 : 0));		// NOI18N
 			pw.println ("x = " + x);						// NOI18N
 			pw.println ("y = " + y);						// NOI18N
 			pw.println ("width = " + width);					// NOI18N
 			pw.println ("height = " + height);					// NOI18N
-			pw.println ("ismax = " + String.valueOf ((isMax)? 1 : 0));		// NOI18N
+			pw.println ("ismax = " + ((isMax)? 1 : 0));		// NOI18N
 			pw.println ("filesystems = " + fsString.toString());			// NOI18N
 			pw.println ("font_size = " + fontSize);					// NOI18N
 			pw.println ("wfs_path = " + wfsPath);					// NOI18N
-			pw.println ("is_method = " + String.valueOf ((selectMethod)? 1 : 0));	// NOI18N
+			pw.println ("is_method = " + ((selectMethod)? 1 : 0));	// NOI18N
 			pw.println ("method = " + methodName);					// NOI18N
-			pw.println ("no_wipe_zero_blocks = " + String.valueOf ((noWipeZeroBlocks)? 1 : 0));	// NOI18N
-			pw.println ("use_dedicated = " + String.valueOf ((useDedicated)? 1 : 0));		// NOI18N
-			pw.println ("is_order = " + String.valueOf ((selectOrder)? 1 : 0));	// NOI18N
+			pw.println ("no_wipe_zero_blocks = " + ((noWipeZeroBlocks)? 1 : 0));	// NOI18N
+			pw.println ("use_dedicated = " + ((useDedicated)? 1 : 0));		// NOI18N
+			pw.println ("is_order = " + ((selectOrder)? 1 : 0));	// NOI18N
 			pw.println ("order = " + wipingOrder);					// NOI18N
 		}
 		catch (IOException ex)
