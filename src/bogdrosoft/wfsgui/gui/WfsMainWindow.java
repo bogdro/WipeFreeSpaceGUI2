@@ -1868,7 +1868,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 			wfs = null;
 			stopButtonActionPerformed(null);
 		}
-	};
+	}
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton aboutButton;
