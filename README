@@ -34,8 +34,10 @@ Requirements:
 - WipeFreeSpace
 - JRE, the Java Runtime Environment >= (1.)7.0
 
-Using Apache NetBeans: open the WipeFreeSpaceGUI2 directory as a NetBeans
- Project, right-click the project's root element in the project's tree on the
+Using Apache NetBeans: choose the "English" configuration from the dropdown
+ menu at the top and click the "Run" button.
+You can also open the WipeFreeSpaceGUI2 folder as a NetBeans Project,
+ right-click the project's root element in the project's tree on the
  left side of the window (the "Projects" sub-window), then click "Properties".
  Click "Run" in the tree and put
 	-Duser.language=en -Duser.country=US
