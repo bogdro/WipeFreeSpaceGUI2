@@ -68,7 +68,7 @@ Project homepage: https://wipefreespace.sourceforge.io
 		<test.rsrc.dir>${project.build.testOutputDirectory}</test.rsrc.dir>
 		<!-- Version numbers: -->
 		<junit.version>4.13.2</junit.version>
-		<mockito.version>5.5.0</mockito.version>
+		<mockito.version>5.15.2</mockito.version>
 	</properties>
 
 	<dependencies>

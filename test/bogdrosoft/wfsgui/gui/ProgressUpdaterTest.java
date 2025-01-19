@@ -25,8 +25,9 @@ import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.text.JTextComponent;
 import org.junit.Test;
-import org.mockito.Matchers;
 import org.mockito.Mockito;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
 
 /**
  * ProgressUpdaterTest - a test for the ProgressUpdater class.
@@ -40,15 +41,19 @@ public class ProgressUpdaterTest
 	@Test
 	public void testCall()
 	{
-		JTextComponent textComponentMock = Mockito.mock(JTextArea.class);
+		JTextComponent textComponentMock = mock(JTextArea.class);
 		Mockito.when(textComponentMock.getText()).thenReturn("");
+		JProgressBar stageBarParam = mock(JProgressBar.class);
+		JProgressBar fsBarParam = mock(JProgressBar.class);
+		JProgressBar totalBarParam = mock(JProgressBar.class);
+		JLabel currentFSLabel = mock(JLabel.class);
 		ProgressUpdater instance = new ProgressUpdater(
 			new ByteArrayInputStream(new byte[] {1}),
 			textComponentMock,
-			new JProgressBar(),
-			new JProgressBar(),
-			new JProgressBar(),
-			new JLabel(),
+			stageBarParam,
+			fsBarParam,
+			totalBarParam,
+			currentFSLabel,
 			3, 3
 		);
 		instance.startProcessing();
@@ -57,6 +62,6 @@ public class ProgressUpdaterTest
 			Thread.sleep (1000);
 		} catch (InterruptedException intex) {}
 		instance.stop();
-		Mockito.verify(textComponentMock).setText(Matchers.anyString());
+		Mockito.verify(textComponentMock).setText(anyString());
 	}
 }
