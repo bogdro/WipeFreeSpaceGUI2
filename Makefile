@@ -216,6 +216,7 @@ icons:	$(PNG_ICONS)
 
 javadoc-clean:
 	$(DEL) dist/javadoc
+	$(MAVEN) clean
 
 check:	test
 
