@@ -425,7 +425,7 @@ public class CommandLineParser
 
 		for ( int i = 0; i < args.length; i++ )
 		{
-			String currentArg = args[i].toLowerCase (Locale.ENGLISH);
+			String currentArg = args[i].toLowerCase(Locale.ENGLISH);
 			if ( "--help".equals(currentArg)	// NOI18N
 				|| "-h".equals(currentArg)	// NOI18N
 				|| "-?".equals(currentArg)	// NOI18N
@@ -464,11 +464,11 @@ public class CommandLineParser
 				System.out.println ("WipeFreeSpaceGUI2 " + VER_WORD + " " + WfsMainWindow.WFSGUI_VERSION);	// NOI18N
 				Starter.closeProgram (0);
 			}
-			if ( "--all-zeros".equals(args[i].toLowerCase(Locale.ENGLISH)) )	// NOI18N
+			if ( "--all-zeros".equals(currentArg) )	// NOI18N
 			{
 				onlyZeros = true;
 			}
-			else if ( "--superblock".equals(args[i].toLowerCase (Locale.ENGLISH))	// NOI18N
+			else if ( "--superblock".equals(currentArg)	// NOI18N
 				|| "-b".equals(args[i]) )	// NOI18N
 			{
 				superOff = true;
@@ -479,7 +479,7 @@ public class CommandLineParser
 				i++;
 			}
 			else if ( "-B".equals(args[i])	// NOI18N
-				|| "--blocksize".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+				|| "--blocksize".equals(currentArg) )	// NOI18N
 			{
 				blkSize = true;
 				if ( i+1 < args.length )
@@ -496,7 +496,7 @@ public class CommandLineParser
 				}
 			}
 			else if ( "-f".equals(args[i])	// NOI18N
-				|| "--force".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+				|| "--force".equals(currentArg) )	// NOI18N
 			{
 				force = true;
 			}
@@ -538,11 +538,11 @@ public class CommandLineParser
 					i++;
 				}
 			}
-			else if ( "--last-zero".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--last-zero".equals(currentArg) )	// NOI18N
 			{
 				lastZero = true;
 			}
-			else if ( "--method".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--method".equals(currentArg) )	// NOI18N
 			{
 				method = true;
 				if ( i+1 < args.length )
@@ -552,7 +552,7 @@ public class CommandLineParser
 				i++;
 			}
 			else if ( "-n".equals(args[i])	// NOI18N
-				|| "--iterations".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+				|| "--iterations".equals(currentArg) )	// NOI18N
 			{
 				iter = true;
 				if ( i+1 < args.length )
@@ -561,23 +561,23 @@ public class CommandLineParser
 				}
 				i++;
 			}
-			else if ( "--nopart".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--nopart".equals(currentArg) )	// NOI18N
 			{
 				nopart = true;
 			}
-			else if ( "--nounrm".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--nounrm".equals(currentArg) )	// NOI18N
 			{
 				nounrm = true;
 			}
-			else if ( "--nowfs".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--nowfs".equals(currentArg) )	// NOI18N
 			{
 				nowfs = true;
 			}
-			else if ( "--no-wipe-zero-blocks".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--no-wipe-zero-blocks".equals(currentArg) )	// NOI18N
 			{
 				noWipeZeroBlocks = true;
 			}
-			else if ( "--order".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--order".equals(currentArg) )	// NOI18N
 			{
 				isOrder = true;
 				if ( i+1 < args.length )
@@ -586,11 +586,11 @@ public class CommandLineParser
 				}
 				i++;
 			}
-			else if ( "--use-dedicated".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--use-dedicated".equals(currentArg) )	// NOI18N
 			{
 				useDedicated = true;
 			}
-			else if ( "--use-ioctl".equals(args[i].toLowerCase (Locale.ENGLISH)) )	// NOI18N
+			else if ( "--use-ioctl".equals(currentArg) )	// NOI18N
 			{
 				ioctl = true;
 			}
