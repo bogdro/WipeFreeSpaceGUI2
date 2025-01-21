@@ -172,21 +172,19 @@ public class ProgressUpdater implements Callable<Void>
 						{
 							return;
 						}
-						if ( ! lastFS.equals (newFSname) )
+						if ( ! lastFS.equals(newFSname)
+							&& ! lastFS.equals(Utils.EMPTY_STR))
 						{
 							// new filesystem started. Substract the
 							// current filesystem progress and increase
 							// the total progress by 1 filesystem
-							if ( ! lastFS.equals (Utils.EMPTY_STR) )
-							{
-								stageBar.setValue (0);
-								fsBar.setValue (0);
-								totalBar.setValue
-									(((fsDone-1)
-									*(totalBar.getMaximum ()
-									- totalBar.getMinimum ()))
-									/totalFSnum);
-							}
+							stageBar.setValue(0);
+							fsBar.setValue(0);
+							totalBar.setValue
+								(((fsDone-1)
+								*(totalBar.getMaximum()
+								- totalBar.getMinimum()))
+								/totalFSnum);
 						}
 						lastFS = newFSname;
 						// === checking for new FS finished.

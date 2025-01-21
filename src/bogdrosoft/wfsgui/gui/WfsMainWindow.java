@@ -148,12 +148,9 @@ public class WfsMainWindow extends javax.swing.JFrame
 		}
 		// filesystem list
 		List<String> fslist = CommandLineParser.getFsList();
-		if ( fslist != null )
+		if ( fslist != null && !fslist.isEmpty() )
 		{
-			if ( !fslist.isEmpty() )
-			{
-				fsList.setListData (new Vector<String>(fslist));
-			}
+			fsList.setListData(new Vector<String>(fslist));
 		}
 		if (CommandLineParser.getFontSize() > 0)
 		{
@@ -1033,12 +1030,9 @@ public class WfsMainWindow extends javax.swing.JFrame
 		List<String> params = new ArrayList<> (20); // 15 is the minimum.
 		String pathToProg = "wipefreespace";		// NOI18N
 		String pathText = pathToWfsTextField.getText ();
-		if ( pathText != null )
+		if ( pathText != null && ! pathText.isEmpty() )
 		{
-			if ( ! pathText.isEmpty () )
-			{
-				pathToProg = pathText;
-			}
+			pathToProg = pathText;
 		}
 		params.add (pathToProg);
 		if ( optBlocksizeCheckBox.isSelected () )
@@ -1368,12 +1362,9 @@ public class WfsMainWindow extends javax.swing.JFrame
 				}
 				// filesystem list
 				List<String> fslist = cfg.getFSList();
-				if ( fslist != null )
+				if ( fslist != null && !fslist.isEmpty() )
 				{
-					if ( !fslist.isEmpty() )
-					{
-						fsList.setListData (new Vector<String>(fslist));
-					}
+					fsList.setListData(new Vector<String>(fslist));
 				}
 				if (cfg.getFontSizeValue () > 0)
 				{
@@ -1555,67 +1546,61 @@ public class WfsMainWindow extends javax.swing.JFrame
 
         private void optNoPartCheckBoxItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_optNoPartCheckBoxItemStateChanged
         {//GEN-HEADEREND:event_optNoPartCheckBoxItemStateChanged
-		if ( evt.getStateChange () == ItemEvent.SELECTED )
+		if ( evt.getStateChange() == ItemEvent.SELECTED
+			&& optNoUnrmCheckBox.isSelected()
+			&& optNoWfsCheckBox.isSelected() )
 		{
-			if ( optNoUnrmCheckBox.isSelected () && optNoWfsCheckBox.isSelected () )
-			{
-				optNoPartCheckBox.setSelected (false);
-			}
+			optNoPartCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoPartCheckBoxItemStateChanged
 
         private void optNoPartCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optNoPartCheckBoxStateChanged
         {//GEN-HEADEREND:event_optNoPartCheckBoxStateChanged
-		if ( optNoPartCheckBox.isSelected () )
+		if ( optNoPartCheckBox.isSelected()
+			&& optNoUnrmCheckBox.isSelected()
+			&& optNoWfsCheckBox.isSelected() )
 		{
-			if ( optNoUnrmCheckBox.isSelected () && optNoWfsCheckBox.isSelected () )
-			{
-				optNoPartCheckBox.setSelected (false);
-			}
+			optNoPartCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoPartCheckBoxStateChanged
 
         private void optNoUnrmCheckBoxItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_optNoUnrmCheckBoxItemStateChanged
         {//GEN-HEADEREND:event_optNoUnrmCheckBoxItemStateChanged
-		if ( evt.getStateChange () == ItemEvent.SELECTED )
+		if ( evt.getStateChange() == ItemEvent.SELECTED
+			&& optNoPartCheckBox.isSelected()
+			&& optNoWfsCheckBox.isSelected() )
 		{
-			if ( optNoPartCheckBox.isSelected () && optNoWfsCheckBox.isSelected () )
-			{
-				optNoUnrmCheckBox.setSelected (false);
-			}
+			optNoUnrmCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoUnrmCheckBoxItemStateChanged
 
         private void optNoUnrmCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optNoUnrmCheckBoxStateChanged
         {//GEN-HEADEREND:event_optNoUnrmCheckBoxStateChanged
-		if ( optNoUnrmCheckBox.isSelected () )
+		if ( optNoUnrmCheckBox.isSelected()
+			&& optNoPartCheckBox.isSelected()
+			&& optNoWfsCheckBox.isSelected() )
 		{
-			if ( optNoPartCheckBox.isSelected () && optNoWfsCheckBox.isSelected () )
-			{
-				optNoUnrmCheckBox.setSelected (false);
-			}
+			optNoUnrmCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoUnrmCheckBoxStateChanged
 
         private void optNoWfsCheckBoxItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_optNoWfsCheckBoxItemStateChanged
         {//GEN-HEADEREND:event_optNoWfsCheckBoxItemStateChanged
-		if ( evt.getStateChange () == ItemEvent.SELECTED )
+		if ( evt.getStateChange() == ItemEvent.SELECTED
+			&& optNoPartCheckBox.isSelected()
+			&& optNoUnrmCheckBox.isSelected() )
 		{
-			if ( optNoPartCheckBox.isSelected () && optNoUnrmCheckBox.isSelected () )
-			{
-				optNoWfsCheckBox.setSelected (false);
-			}
+			optNoWfsCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoWfsCheckBoxItemStateChanged
 
         private void optNoWfsCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optNoWfsCheckBoxStateChanged
         {//GEN-HEADEREND:event_optNoWfsCheckBoxStateChanged
-		if ( optNoWfsCheckBox.isSelected () )
+		if ( optNoWfsCheckBox.isSelected()
+			&& optNoPartCheckBox.isSelected()
+			&& optNoUnrmCheckBox.isSelected() )
 		{
-			if ( optNoPartCheckBox.isSelected () && optNoUnrmCheckBox.isSelected () )
-			{
-				optNoWfsCheckBox.setSelected (false);
-			}
+			optNoWfsCheckBox.setSelected(false);
 		}
         }//GEN-LAST:event_optNoWfsCheckBoxStateChanged
 
@@ -1638,14 +1623,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 
         private void optMethodCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optMethodCheckBoxStateChanged
         {//GEN-HEADEREND:event_optMethodCheckBoxStateChanged
-                if ( optMethodCheckBox.isSelected () )
-		{
-			wipingMethodComboBox.setEnabled (true);
-		}
-		else
-		{
-			wipingMethodComboBox.setEnabled (false);
-		}
+		wipingMethodComboBox.setEnabled(optMethodCheckBox.isSelected());
         }//GEN-LAST:event_optMethodCheckBoxStateChanged
 
         private void wfsBrowseButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wfsBrowseButtonActionPerformed
@@ -1715,7 +1693,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 		{
 			wipingOrderComboBox.setEnabled (true);
 		}
-		else
+		else if ( evt.getStateChange() == ItemEvent.DESELECTED )
 		{
 			wipingOrderComboBox.setEnabled (false);
 		}
@@ -1723,14 +1701,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 
         private void optOrderCheckBoxStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_optOrderCheckBoxStateChanged
         {//GEN-HEADEREND:event_optOrderCheckBoxStateChanged
-		if ( optOrderCheckBox.isSelected () )
-		{
-			wipingOrderComboBox.setEnabled (true);
-		}
-		else
-		{
-			wipingOrderComboBox.setEnabled (false);
-		}
+		wipingOrderComboBox.setEnabled(optOrderCheckBox.isSelected());
         }//GEN-LAST:event_optOrderCheckBoxStateChanged
 
 	/**
