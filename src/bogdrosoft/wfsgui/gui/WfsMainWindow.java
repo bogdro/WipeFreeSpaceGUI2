@@ -33,7 +33,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Vector;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.SwingUtilities;
@@ -71,10 +70,10 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private JFileChooser cfgFC;
 	private JFileChooser progFC;
 
-	private volatile transient Process wfs = null;
-	private volatile transient ProgressUpdater stdoutUpdater;
-	private volatile transient ProgressUpdater stderrUpdater;
-	private volatile transient SwingWorker<Void, Void> wfs_monitor = null;
+	private transient volatile Process wfs = null;
+	private transient volatile ProgressUpdater stdoutUpdater;
+	private transient volatile ProgressUpdater stderrUpdater;
+	private transient volatile SwingWorker<Void, Void> wfsMonitor = null;
 
 	/**
 	 * Creates new form WfsMainWindow.
@@ -1177,8 +1176,8 @@ public class WfsMainWindow extends javax.swing.JFrame
 			stderrUpdater.startProcessing ();
 
 			// a thread that waits for the program to finish and sets the GUI back:
-			wfs_monitor = new WfsMonitor();
-			wfs_monitor.execute ();
+			wfsMonitor = new WfsMonitor();
+			wfsMonitor.execute ();
 		}
 		catch (FileNotFoundException ex)
 		{
@@ -1764,9 +1763,9 @@ public class WfsMainWindow extends javax.swing.JFrame
 				// stop the process:
 				wfs.destroy ();
 				wfs = null;
-				if ( wfs_monitor != null )
+				if ( wfsMonitor != null )
 				{
-					wfs_monitor.cancel (true);//.interrupt ();
+					wfsMonitor.cancel (true);//.interrupt ();
 				}
 			}
 			catch (Exception ex)
@@ -1782,7 +1781,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 	 * Real program starting point.
 	 * @param args the command line arguments.
 	 */
-	public static void start(String args[])
+	public static void start(String[] args)
 	{
 		// parse the command line:
 		CommandLineParser.parse (args);
