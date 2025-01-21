@@ -58,7 +58,7 @@ public class ConfigFile
 	private static final Pattern IOCTL_PATTERN = Pattern.compile
 		("no_cache\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern FS_LIST_PATTERN = Pattern.compile
-		("filesystems\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
+		("filesystems\\s*=\\s*(.*+)", Pattern.CASE_INSENSITIVE);	// NOI18N
 	private static final Pattern X_PATTERN = Pattern.compile
 		("x\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);			// NOI18N
 	private static final Pattern Y_PATTERN = Pattern.compile
@@ -72,19 +72,19 @@ public class ConfigFile
 	private static final Pattern FONT_SIZE_PATTERN = Pattern.compile
 		("font_size\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern PATH_TO_WFS_PATTERN = Pattern.compile
-		("wfs_path\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
+		("wfs_path\\s*=\\s*(.*+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern IS_METHOD_CHOSEN_PATTERN = Pattern.compile
 		("is_method\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern METHOD_NAME_PATTERN = Pattern.compile
-		("method\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
+		("method\\s*=\\s*(.*+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern NO_WIPE_ZERO_PATTERN = Pattern.compile
 		("no_wipe_zero_blocks\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);	// NOI18N
 	private static final Pattern USE_DEDICATED_PATTERN = Pattern.compile
-		("use_dedicated\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);	// NOI18N
+		("use_dedicated\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);	// NOI18N
 	private static final Pattern IS_WIPING_ORDER_CHOSEN_PATTERN = Pattern.compile
 		("is_order\\s*=\\s*(\\d+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 	private static final Pattern WIPING_ORDER_PATTERN = Pattern.compile
-		("order\\s*=\\s*(.*)", Pattern.CASE_INSENSITIVE);		// NOI18N
+		("order\\s*=\\s*(.*+)", Pattern.CASE_INSENSITIVE);		// NOI18N
 
 	private static final Pattern COMMENT_PATTERN = Pattern.compile
 		("^\\s*#.*");		// NOI18N
