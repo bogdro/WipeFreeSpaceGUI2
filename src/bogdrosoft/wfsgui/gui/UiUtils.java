@@ -161,7 +161,7 @@ public class UiUtils
 		if (spinner != null)
 		{
 			Object val = spinner.getValue();
-			if (val != null && (val instanceof Number))
+			if (val instanceof Number)
 			{
 				fontSize = ((Number) val).floatValue();
 			}

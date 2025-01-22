@@ -1516,7 +1516,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 				}
 				cfg.setFSList (values);
 				Object val = fontSizeSpinner.getValue ();
-				if ( val != null && val instanceof Number )
+				if ( val instanceof Number )
 				{
 					cfg.setFontSizeValue (((Number)val).intValue ());
 				}
