@@ -1838,6 +1838,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 			{
 				Utils.handleException (ex,
 					"WfsMonitor: waitFor()");		// NOI18N
+				Thread.currentThread().interrupt();
 			}
 			return null;
 		}

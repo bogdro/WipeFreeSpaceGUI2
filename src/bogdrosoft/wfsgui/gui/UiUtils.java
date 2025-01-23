@@ -111,6 +111,7 @@ public class UiUtils
 			{
 				// can be called when closing the program, so ignore
 				//Utils.handleException (ex, "changeGUI->invokeAndWait->Interrupt");// NOI18N
+				Thread.currentThread().interrupt();
 			}
 			catch (Throwable ex)
 			{

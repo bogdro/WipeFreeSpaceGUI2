@@ -116,7 +116,12 @@ public class ProgressUpdater implements Callable<Void>
 			try
 			{
 				Thread.sleep (100);
-			} catch (InterruptedException intex) {break;}
+			}
+			catch (InterruptedException intex)
+			{
+				Thread.currentThread().interrupt();
+				break;
+			}
 			if ( Thread.interrupted () || isStopped ) 
 			{
 				break;
