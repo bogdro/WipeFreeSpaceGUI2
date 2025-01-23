@@ -1173,7 +1173,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 				stderrUpdater.startProcessing ();
 
 				// a thread that waits for the program to finish and sets the GUI back:
-				wfsMonitor = new WfsMonitor();
+				wfsMonitor = new WfsMonitor(wfs);
 				wfsMonitor.execute ();
 			}
 		}
@@ -1716,7 +1716,9 @@ public class WfsMainWindow extends javax.swing.JFrame
 	{
 		synchronized (WFS_SYNC)
 		{
-			if ( wfs != null )
+			if ( wfsMonitor != null
+				&& wfsMonitor.getState() != SwingWorker.StateValue.PENDING
+				&& !wfsMonitor.isDone() )
 			{
 				// ask the user and kill the process.
 				try
@@ -1743,6 +1745,7 @@ public class WfsMainWindow extends javax.swing.JFrame
 					if ( wfsMonitor != null )
 					{
 						wfsMonitor.cancel (true);//.interrupt ();
+						wfsMonitor = null;
 					}
 				}
 				catch (Exception ex)
@@ -1824,15 +1827,19 @@ public class WfsMainWindow extends javax.swing.JFrame
 
 	private class WfsMonitor extends SwingWorker<Void, Void>
 	{
+		private final Process wfsProcess;
+
+		private WfsMonitor(Process p)
+		{
+			wfsProcess = p;
+		}
+
 		@Override
 		protected Void doInBackground ()
 		{
 			try
 			{
-				synchronized(WFS_SYNC)
-				{
-					wfs.waitFor();
-				}
+				wfsProcess.waitFor();
 			}
 			catch (Exception ex)
 			{
@@ -1846,10 +1853,6 @@ public class WfsMainWindow extends javax.swing.JFrame
 		@Override
 		protected void done ()
 		{
-			synchronized(WFS_SYNC)
-			{
-				wfs = null;
-			}
 			stopButtonActionPerformed(null);
 		}
 	}
