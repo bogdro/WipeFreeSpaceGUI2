@@ -66,8 +66,7 @@ JARSIGN		= jarsigner
 JARSIGN_ALIAS	= 'bogdro-soft'
 JARSIGN_OPTS	= -digestalg SHA-512 -sigalg SHA512withRSA -tsa $(TSAURL)
 
-# image converters: Inkscape (https://inkscape.org) and
-# ImageMagick (http://www.imagemagick.org/)
+# image converter: Inkscape (https://inkscape.org)
 SVG2PNG		= inkscape
 
 ###########################################################################
