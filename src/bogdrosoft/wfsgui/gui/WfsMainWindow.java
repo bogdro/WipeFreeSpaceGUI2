@@ -61,6 +61,12 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private static final String FILE_EXISTS_OVERWRITE = MAIN_BUNDLE.getString("exists_Overwrite");
 	private static final String FILE_NOT_WRITABLE = MAIN_BUNDLE.getString("Cant_write_to_file");
 
+	private static final Object WFS_SYNC = new Object();
+	private transient Process wfs = null;
+	private transient ProgressUpdater stdoutUpdater;
+	private transient ProgressUpdater stderrUpdater;
+	private transient SwingWorker<Void, Void> wfsMonitor = null;
+
 	/** Current version number as a String. */
 	public static final String WFSGUI_VERSION =
 		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
@@ -69,11 +75,6 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private JFileChooser fsChooser;
 	private JFileChooser cfgFC;
 	private JFileChooser progFC;
-
-	private transient volatile Process wfs = null;
-	private transient volatile ProgressUpdater stdoutUpdater;
-	private transient volatile ProgressUpdater stderrUpdater;
-	private transient volatile SwingWorker<Void, Void> wfsMonitor = null;
 
 	/**
 	 * Creates new form WfsMainWindow.
@@ -1156,22 +1157,25 @@ public class WfsMainWindow extends javax.swing.JFrame
 			{
 				nStages--;
 			}
-			wfs = run.exec (params.toArray (/* just a type marker: */ new String[] {""}));	// NOI18N
-			// start Threads that read the program's stdout and stderr and put
-			// it in the text areas and update the progress bars accordingly.
-			stdoutUpdater = new ProgressUpdater (wfs.getInputStream (),
-				wfsOutputTextArea, stageProgressBar,
-				fsProgressBar, totalProgressBar,
-				nowWipingNameLabel, model.getSize (),  nStages);
-			stdoutUpdater.startProcessing ();
-			stderrUpdater = new ProgressUpdater (wfs.getErrorStream (),
-				wfsErrorsTextArea, null, null, null,
-				nowWipingNameLabel, model.getSize (),  nStages);
-			stderrUpdater.startProcessing ();
+			synchronized (WFS_SYNC)
+			{
+				wfs = run.exec (params.toArray (/* just a type marker: */ new String[] {""}));	// NOI18N
+				// start Threads that read the program's stdout and stderr and put
+				// it in the text areas and update the progress bars accordingly.
+				stdoutUpdater = new ProgressUpdater (wfs.getInputStream (),
+					wfsOutputTextArea, stageProgressBar,
+					fsProgressBar, totalProgressBar,
+					nowWipingNameLabel, model.getSize (),  nStages);
+				stdoutUpdater.startProcessing ();
+				stderrUpdater = new ProgressUpdater (wfs.getErrorStream (),
+					wfsErrorsTextArea, null, null, null,
+					nowWipingNameLabel, model.getSize (),  nStages);
+				stderrUpdater.startProcessing ();
 
-			// a thread that waits for the program to finish and sets the GUI back:
-			wfsMonitor = new WfsMonitor();
-			wfsMonitor.execute ();
+				// a thread that waits for the program to finish and sets the GUI back:
+				wfsMonitor = new WfsMonitor();
+				wfsMonitor.execute ();
+			}
 		}
 		catch (FileNotFoundException ex)
 		{
@@ -1710,39 +1714,42 @@ public class WfsMainWindow extends javax.swing.JFrame
 	 */
 	private boolean askForExit()
 	{
-		if ( wfs != null )
+		synchronized (WFS_SYNC)
 		{
-			// ask the user and kill the process.
-			try
+			if ( wfs != null )
 			{
-				int res = JOptionPane.showConfirmDialog (this,
-					STOP_PROC_MSG, QUESTION_TITLE,
-					JOptionPane.YES_NO_CANCEL_OPTION);
-				if ( res != JOptionPane.YES_OPTION )
+				// ask the user and kill the process.
+				try
 				{
-					return false;
+					int res = JOptionPane.showConfirmDialog (this,
+						STOP_PROC_MSG, QUESTION_TITLE,
+						JOptionPane.YES_NO_CANCEL_OPTION);
+					if ( res != JOptionPane.YES_OPTION )
+					{
+						return false;
+					}
+					// stop the Threads reading stdout and stderr
+					if ( stdoutUpdater != null )
+					{
+						stdoutUpdater.stop ();
+					}
+					if ( stderrUpdater != null )
+					{
+						stderrUpdater.stop ();
+					}
+					// stop the process:
+					wfs.destroy ();
+					wfs = null;
+					if ( wfsMonitor != null )
+					{
+						wfsMonitor.cancel (true);//.interrupt ();
+					}
 				}
-				// stop the Threads reading stdout and stderr
-				if ( stdoutUpdater != null )
+				catch (Exception ex)
 				{
-					stdoutUpdater.stop ();
+					Utils.handleException (ex,
+						"askForExit");	// NOI18N
 				}
-				if ( stderrUpdater != null )
-				{
-					stderrUpdater.stop ();
-				}
-				// stop the process:
-				wfs.destroy ();
-				wfs = null;
-				if ( wfsMonitor != null )
-				{
-					wfsMonitor.cancel (true);//.interrupt ();
-				}
-			}
-			catch (Exception ex)
-			{
-				Utils.handleException (ex,
-					"askForExit");	// NOI18N
 			}
 		}
 		return true;
@@ -1822,7 +1829,10 @@ public class WfsMainWindow extends javax.swing.JFrame
 		{
 			try
 			{
-				wfs.waitFor ();
+				synchronized(WFS_SYNC)
+				{
+					wfs.waitFor();
+				}
 			}
 			catch (Exception ex)
 			{
@@ -1835,7 +1845,10 @@ public class WfsMainWindow extends javax.swing.JFrame
 		@Override
 		protected void done ()
 		{
-			wfs = null;
+			synchronized(WFS_SYNC)
+			{
+				wfs = null;
+			}
 			stopButtonActionPerformed(null);
 		}
 	}
