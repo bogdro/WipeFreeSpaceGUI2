@@ -61,16 +61,16 @@ public class WfsMainWindow extends javax.swing.JFrame
 	private static final String FILE_EXISTS_OVERWRITE = MAIN_BUNDLE.getString("exists_Overwrite");
 	private static final String FILE_NOT_WRITABLE = MAIN_BUNDLE.getString("Cant_write_to_file");
 
+	/** Current version number as a String. */
+	public static final String WFSGUI_VERSION =
+		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
+		.getString("VER");	// NOI18N
+
 	private static final Object WFS_SYNC = new Object();
 	private transient Process wfs = null;
 	private transient ProgressUpdater stdoutUpdater;
 	private transient ProgressUpdater stderrUpdater;
 	private transient SwingWorker<Void, Void> wfsMonitor = null;
-
-	/** Current version number as a String. */
-	public static final String WFSGUI_VERSION =
-		ResourceBundle.getBundle("bogdrosoft/wfsgui/rsrc/version")	// NOI18N
-		.getString("VER");	// NOI18N
 
 	private JFileChooser fsChooser;
 	private JFileChooser cfgFC;
