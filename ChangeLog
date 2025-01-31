@@ -1,3 +1,64 @@
+2025-01-24	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
+
+	* WipeFreeSpaceGUI2 version 1.2
+	  Added support for the "--order" option in WipeFreeSpace. Added unit
+	  tests for all the classes (current coverage: 63% with GUI, 31% in
+	  headless mode). Many code improvements, simplifications, fixes and
+	  refactorings. UI improvements and fixes. Improvements in the build
+	  system. Updates in documentation.
+	* WfsMainWindow.*, ConfigFile.java, CommandLineParser.java: Added
+	  support for the wiping order option.
+	* Utils.java (handleException): Show also the causing exceptions. Add
+	  a flag to display all exceptions in the stack trace.
+	* EscKeyListener.java (toString): Avoid a potential NPE.
+	* ConfigFile.java (read, readIntUsingMatcher): Move common code for
+	  parsing integers to a separate method. Change Matchers to local
+	  variables.
+	* Utils.java (UncExHndlr): Add a method to set the uncaught exception
+	  handler for GUI threads.
+	* WfsMainWindow.java (WfsMainWindow): Set the uncaught exception
+	  handler using the new method.
+	* ConfigFile.java (read, write): Close the streams in 'finally' blocks.
+	* AboutBox.java: Changed SourceForge URL to https.
+	* Starter.java (redirectStderrToFile): Log exceptions.
+	* WfsMainWindow.java: Fixed the default window size. Fixed variable
+	  names and types. Improved thread synchronisation.
+	* WfsMainWindow.java (startButtonActionPerformed): Disable more
+	  controls when starting. Reset the "Now wiping" label when starting.
+	* WfsMainWindow.java (stopButtonActionPerformed): Restore more
+	  controls after stop.
+	* ConfigFile.java (write): Remove unneeded String.valueOf().
+	* CommandLineParser.java (parse): Compare literals to variables and
+	  reduce code duplication.
+	* ConfigFile.java: Corrected the regular expressions for the wiping
+	  method name, path to 'wipefreespace', use_dedicated and filesystems.
+	* src/**/*.java: Code quality updates: renamed constant private
+	  fields to upper-case, fixed member static access, simplified if-
+	  statements, compare String literals to variables, rearranged fields.
+	* src/{BogDroSoft => bogdrosoft}, src/**/*.java: Renamed package.
+	* test/bogdrosoft/wfsgui/gui/UiUtilsTest.java: Added a test for
+	  the UiUtils class.
+	* AboutBoxTest.java: Added a test for the AboutBox class.
+	* ConfigFileTest.java: Added a test for the ConfigFile class.
+	* UtilsTest.java: Added a test for the Utils class.
+	* EscKeyListenerTest.java: Added a test for the EscKeyListener class.
+	* WfsMainWindowTest.java: Added a test for the WfsMainWindow class.
+	* UiTestHelper.java: Added a utility class for user interface tests.
+	* ProgressUpdaterTest.java: Added a test for the ProgressUpdater class.
+	* CommandLineParserTest.java: Added a test for the CommandLineParser
+	  class.
+	* pom.xml: Added Apache Maven project configuration file (for quality
+	  tests in SonarCloud).
+	* Makefile: Explicitly list the files to distribute instead of using
+	  an exclusion list. Substitute the version in pom.xml when packaging.
+	  Added a coverage target. When cleaning, clean also Maven target.
+	* Makefile, README, src/**/*.java, run*.*: Updated or added copyright.
+	* README: Added information about the "English" configuration.
+	* sonar-project.properties: Added project properties for quality tests
+	  in SonarCloud.
+	* .semgrepignore: Added ignore configuration for quality tests
+	  in Semgrep.
+
 2022-02-08	Bogdan Drozdowski <bogdro (at) users . sourceforge . net>
 
 	* WipeFreeSpaceGUI2 version 1.0.

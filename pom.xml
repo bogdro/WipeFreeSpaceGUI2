@@ -28,7 +28,7 @@ Project homepage: https://wipefreespace.sourceforge.io
 
 	<groupId>bogdrosoft.wfs</groupId>
 	<artifactId>wfsgui2</artifactId>
-	<version>1.0</version> <!-- WFSGUI2_VERSION -->
+	<version>1.2</version> <!-- WFSGUI2_VERSION -->
 	<packaging>jar</packaging>
 
 	<name>WipeFreeSpaceGUI2</name>
